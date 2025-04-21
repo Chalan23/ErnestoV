@@ -44,5 +44,3 @@ while intentos < IntentosMax:
 
 if intentos == IntentosMax:
     print("Cagaste su pc se va formatear en 3...2...1...0")
-
-
