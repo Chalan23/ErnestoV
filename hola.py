@@ -73,16 +73,16 @@
 
 # ingresar 3 numeros y mostrar el mayor de los 3 
 
-print("ingrese numero 1") 
-n1=int(input())
-print("ingrese numero 2") 
-n2=int(input())
-print("ingrese numero 3") 
-n3=int(input())
+# print("ingrese numero 1") 
+# n1=int(input())
+# print("ingrese numero 2") 
+# n2=int(input())
+# print("ingrese numero 3") 
+# n3=int(input())
 
-if n1>n2 and n1>n3:
-    print("El numero mayor es ", n1)
-elif n2>n1 and n2>n3:
-    print("El numero mayor es ", n2)
-else:
-    print("El numero mayor es ", n3)
+# if n1>n2 and n1>n3:
+#     print("El numero mayor es ", n1)
+# elif n2>n1 and n2>n3:
+#     print("El numero mayor es ", n2)
+# else:
+#     print("El numero mayor es ", n3)
