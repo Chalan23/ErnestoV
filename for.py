@@ -105,16 +105,33 @@
 #designe dos votantes, pida cantidad de votantes y muestre los resultados
 #verifique quien gano y considere un empate.
 
-print("Cuantas personas votan")
-num=int(input())
+print("Cuantas personas votan?")
+numVotantes =int(input())
 
-bueno=int(input("ingrese la cantidad de votos"))
-for i in range(bueno):
-    bueno=0
+lala = 0
+lele = 0
 
-    num=int(input("Ingrese un numero: "))
-    if num % 2==0:
-        print("Bueno")
+print("Ingrese 1 si votas por lala o 2 si votas por lele")
 
+for i in range(numVotantes):
+    voto = int(input(f"Votante {i+1}, ingrese su voto: "))
+
+    if voto == 1:
+        lala += 1
+    elif voto == 2:
+        lele += 1
     else:
-        print("malo")
+        print("voto nulo")
+
+print("\nResultados:")
+print(f"Votos para lala: {lala}")
+print(f"Votos para lele: {lele}")
+
+if lala > lele:
+    print("Ganó lala")
+elif lele > lala:
+    print("Ganó lele")
+else:
+    print("Empate")
+
+
