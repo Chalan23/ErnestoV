@@ -8,6 +8,7 @@
 # edad=32
 
 # print ("hola", nombre, "su edad es", edad)
+# print (f"hola {nombre} y su edad es {edad}")
 
 # # solicitu de datos 
 # print("Ingrese su nombre")

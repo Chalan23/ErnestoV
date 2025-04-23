@@ -102,36 +102,152 @@
 #         print("El numero es impar")
 
 
-#designe dos votantes, pida cantidad de votantes y muestre los resultados
-#verifique quien gano y considere un empate.
+# #designe dos votantes, pida cantidad de votantes y muestre los resultados
+# #verifique quien gano y considere un empate.
 
-print("Cuantas personas votan?")
-numVotantes =int(input())
+# print("Cuantas personas votan?")
+# numVotantes =int(input())
 
-lala = 0
-lele = 0
+# lala = 0
+# lele = 0
 
-print("Ingrese 1 si votas por lala o 2 si votas por lele")
+# print("Ingrese 1 si votas por lala o 2 si votas por lele")
 
-for i in range(numVotantes):
-    voto = int(input(f"Votante {i+1}, ingrese su voto: "))
+# for i in range(numVotantes):
+#     voto = int(input(f"Votante {i+1}, ingrese su voto: "))
 
-    if voto == 1:
-        lala += 1
-    elif voto == 2:
-        lele += 1
-    else:
-        print("voto nulo")
+#     if voto == 1:
+#         lala += 1
+#     elif voto == 2:
+#         lele += 1
+#     else:
+#         print("voto nulo")
 
-print("\nResultados:")
-print(f"Votos para lala: {lala}")
-print(f"Votos para lele: {lele}")
+# print("\nResultados:")
+# print(f"Votos para lala: {lala}")
+# print(f"Votos para lele: {lele}")
 
-if lala > lele:
-    print("Ganó lala")
-elif lele > lala:
-    print("Ganó lele")
-else:
-    print("Empate")
+# if lala > lele:
+#     print("Ganó lala")
+# elif lele > lala:
+#     print("Ganó lele")
+# else:
+#     print("Empate")
 
 
+#definir dos candidatos y pedir la cantidad de votos, mostrar resultados y verificar quien gano o si hubo empate. (profe)
+
+# c1="Aqua"
+# c2="koku"
+# cv1=0
+# cv2=0
+
+# cantV=int(input("Cuantas peronas votan? "))
+
+# for i in range(cantV):
+#     print(f"por quiem votaras? 1.-{c1} 2.-{c2}")
+#     voto=int(input ())
+#     if voto==1:
+#         cv1=cv1+1
+#         # cv1+=1 (tambien se puede escribir asi la suma)
+    
+#     else:
+#         cv2=cv2+1
+# print(f"la cantidad de votos para {c1} es {cv1}")
+# print(f"la cantidad de votos para {c2} es {cv2}")
+# if cv1>cv2:
+#     print(f"El ganador es {c1}")
+# elif cv2>cv1:
+#     print(f"El ganador es {c2}")
+# else:  
+#     print("Hubo un empate")
+
+
+# # ver cuantas vocales tiene una palabra
+# pa="musolini"
+# vocales="aeiou"
+# cont=0
+# for i in pa:
+#     if i in vocales:
+#         cont+=1
+# print("La cantidad de vocales es", cont)
+
+# for i in pa:
+#     print(i)
+
+
+
+# frase= input("ingrese una frase: ")
+# c=0
+# v=0
+# cons=0
+# for i in frase:
+#     # print(i)
+#     if i.lower() in "aeiou":
+#         v+=1
+#     else:
+#         cons=cons+1
+#     c=c+1
+# print("La cantidad de letras es", c)
+# print("La cantidad de vocales es", v)
+# print("La cantidad de consonantes es", cons)
+
+
+
+
+
+# cant=int(input("Ingrese un numero: "))
+
+# for i in range (cant):
+#     num=int(input("Ingrese un numero: "))
+#     if  num % 2==0:
+#         print("El numero es par")
+
+#     else:
+#         print("El numero es impar")
+
+
+
+# pedir un numero y mostrar todos los pares e impares desde 1 hasta el numero ingresado
+
+# num=int(input("Ingrese un numero: "))
+
+# for i in range(1, num+1):
+#     if i % 2==0:
+#         print(f"el numero {i} es par")
+#     else:
+#         print(f"es numero {i} impar")
+
+
+# super mercado 
+# ingrese la cantidad de productos 
+# preguntar al usuario cuantos preductos llevara y mostrar el total a pagar total + IVA
+
+cant=int(input("Ingrese la cantidad de productos: "))
+total=0
+for i in range(cant):
+    print('''
+        Que producto desea comprar?
+        1.- diazepan
+        2.- metametazona
+        3.- oblea china   
+          ''')
+    
+    op=int(input("Ingrese su opcion: "))
+    if op==1:
+        print("usted lleva diazepan")
+        total=total+9000
+    elif op==2:
+        print("usted lleva metametazona")
+        total=total+18500
+    
+    elif op==3: 
+        print("usted lleva oblea china")
+        total=total+1000
+
+    else: 
+        print("opcion no valida")
+        
+       
+    print(f"EL total neto es , total")
+    print(f"EL total mas IVA es , (total*1.19)")
