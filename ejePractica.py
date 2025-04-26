@@ -61,3 +61,27 @@
 #     print(num, "X" , i, "=" , i*num)
 
 # -------------------------------------------------------------------------------------------------
+
+# # 7.- pedir al usuario que ingrese dos numeros y moestrar el resultado
+# num1 = int(input("Ingrese el primer numero: "))
+# num2 = int(input("Ingrese el segundo numero: "))
+
+# total = num1 + num2
+
+# print("El resultado de la suma es: ", total)
+
+# -------------------------------------------------------------------------------------------------
+
+# 8.- pida al usuario ingresar un numero 7 veces y moestra la suma de todos los numeros
+# suma = 0
+# for i in range(7):
+#     num = int(input("Ingrese un numero: "))
+#     suma = suma + num
+# print("La suma total de los numeros es: ", suma)
+
+# -------------------------------------------------------------------------------------------------
+
+
+
+
+
