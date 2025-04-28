@@ -166,3 +166,5 @@
 # al terminar cada transaccion debe mostrar saldo disponible
 # debe haber tres usuarios cada uno con saldo correspondiente 
 #debe iniciar sesion y segun la clave asociar el saldo disponible 
+
+
