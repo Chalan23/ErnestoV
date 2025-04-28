@@ -139,23 +139,23 @@
 #     print(f"Ganador {p2}")
 
 
-# # Explicacion del while
-# while True:
-#     print ('''
-#         1.-
-#         2.-
-#         3.-Salir 
-#            ''')
-#     op= int(input("Ingrese una opcion:"))
-#     if op == 1:
-#         print("Opcion 1")
-#     elif op == 2:
-#         print("Opcion 2")
-#     elif op == 3:
-#         print("Opcion salir")
-#         break
-#     else:
-#         print("Opcion incorrecta")
+# Explicacion del while
+while True:
+    print ('''
+        1.-
+        2.-
+        3.-Salir 
+           ''')
+    op= int(input("Ingrese una opcion:"))
+    if op == 1:
+        print("Opcion 1")
+    elif op == 2:
+        print("Opcion 2")
+    elif op == 3:
+        print("Opcion salir")
+        break
+    else:
+        print("Opcion incorrecta")
 
 
 #crear un cajero automatico 
