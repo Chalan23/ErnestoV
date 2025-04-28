@@ -81,7 +81,82 @@
 
 # -------------------------------------------------------------------------------------------------
 
+# # 9.- calculadora basica
+# num1 = float(input("Ingresa el primer numero: "))
+# num2 = float(input("Ingrersa el segundo numero: "))
 
+# print("Operaciones que puedes realizar")
+# print("1.-Suma (+)")
+# print("2.-Resta (-)")
+# print("3.-Multiplicacion(*)")
+# print("4.-Divicion (/)")
+
+
+# op = input("Elije una operacion: ")
+
+# if op == "+":
+#     res = num1 + num2
+
+# elif op == "-":
+#     res = num1 - num2
+
+# elif op == "*":
+#     res = num1 * num2
+
+# elif op == "/":
+#     res = num1 / num2
+
+# else:
+#     print("Error ingrese una operacion valida")
+
+# print("El resultado de su operacion matematica es: ", res)
+
+# -------------------------------------------------------------------------------------------------
+
+# # 10.- pida al usuario ingresar su clave de ingreso.
+# clave = int(input("Ingrese su clave: "))
+
+# contraseña = 1234
+
+# if  clave == contraseña:
+#     print("Bienvenido al sistema")
+
+# else:
+#     print("Error, no puede ingresar.")
+
+# -------------------------------------------------------------------------------------------------
+
+# # 11.- Contraseña 3 intentos maximos 
+# claveReal = 1234
+# inten = 0
+# intenMax = 3
+
+# while inten < intenMax:
+#     claveUsuario = int(input("Ingrese su contraseña: "))
+#     if claveUsuario == claveReal:
+#         print("Bienvenido al sistema!")
+#         break
+#     else: 
+#         inten = inten + 1
+#         print(f"Clave Invalida, le quedan {inten} de un total de {intenMax}")
+ 
+# if inten == intenMax:
+#     print("Sistema bloqueado")
+
+# -------------------------------------------------------------------------------------------------
+
+# # 12.- Nombre y edad de una persona
+# nombre = "Ernesto"
+# edad = 32
+
+# print(f"Hola {nombre} tu edad es {edad}")
+
+# nombre = input("Ingresa tu nombre: ")
+# edad = int(input("Ingresa tu edad: "))
+
+# print(f"Hola {nombre} tu edad es {edad} años, gracias por tu información")
+
+# -------------------------------------------------------------------------------------------------
 
 
 

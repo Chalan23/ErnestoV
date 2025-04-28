@@ -47,7 +47,7 @@
 
 #pedir edad al usuario y determinar si es mayor de edad.
 
-
+## verificar edad
 # edad=int(input("Ingrese su edad "))
 
 # if edad >=18:

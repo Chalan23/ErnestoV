@@ -219,35 +219,35 @@
 #         print(f"es numero {i} impar")
 
 
-# super mercado 
-# ingrese la cantidad de productos 
-# preguntar al usuario cuantos preductos llevara y mostrar el total a pagar total + IVA
+# # super mercado 
+# # ingrese la cantidad de productos 
+# # preguntar al usuario cuantos preductos llevara y mostrar el total a pagar total + IVA
 
-cant=int(input("Ingrese la cantidad de productos: "))
-total=0
-for i in range(cant):
-    print('''
-        Que producto desea comprar?
-        1.- diazepan
-        2.- metametazona
-        3.- oblea china   
-          ''')
+# cant=int(input("Ingrese la cantidad de productos: "))
+# total=0
+# for i in range(cant):
+#     print('''
+#         Que producto desea comprar?
+#         1.- diazepan
+#         2.- metametazona
+#         3.- oblea china   
+#           ''')
     
-    op=int(input("Ingrese su opcion: "))
-    if op==1:
-        print("usted lleva diazepan")
-        total=total+9000
-    elif op==2:
-        print("usted lleva metametazona")
-        total=total+18500
+#     op=int(input("Ingrese su opcion: "))
+#     if op==1:
+#         print("usted lleva diazepan")
+#         total=total+9000
+#     elif op==2:
+#         print("usted lleva metametazona")
+#         total=total+18500
     
-    elif op==3: 
-        print("usted lleva oblea china")
-        total=total+1000
+#     elif op==3: 
+#         print("usted lleva oblea china")
+#         total=total+1000
 
-    else: 
-        print("opcion no valida")
+#     else: 
+#         print("opcion no valida")
         
-       
-    print(f"EL total neto es , total")
-    print(f"EL total mas IVA es , (total*1.19)")
+#     print("!-------------------------------------!")   
+#     print(f"EL total neto es , {total}")
+#     print(f"EL total mas IVA es , {total*1.19}")
