@@ -15,6 +15,9 @@
 #     print("Clave correcta! Binevenido")
 
 
+# ----------------------------------------------------------------------------------------
+
+
 # #clave 3 intentos maximos 
  
 # clave = 123
@@ -34,6 +37,7 @@
 #     print("Has superado el máximo de intentos")
 
 
+# ----------------------------------------------------------------------------------------
 
 
 # #pida al usuario el limite inferior y superior de rango
@@ -59,34 +63,35 @@
 # print(numRan)
 
 
+# ----------------------------------------------------------------------------------------
+
 
 # # El usuario debe adivinar el numero
 # import random
 
-# numAleatorio=random.randint(1,50)
+# numram=random.randint(1,50)
 
-# print("Adivina el numero del 1 al 50")
-# intentos = 5
+# print("Adivine el numero entre 1 y 50")
+# intentos=5
 # num=int(input())
 
-
-# while numAleatorio != num:
-#     intentos -= 1
-#     if numAleatorio > num:
+# while numram!=num:
+#     intentos-=1
+#     if intentos==0:
 #         break
-#     if intentos == 0:
-#         print("El numero es menor ")
+#     if num>numram:
+#         print("El numero a adivinar es menor")
 #     else:
-#         print("El numero es mayor")
+#         print("El numero a adivinar es mayor")
 #     print(f"te quedan {intentos} intentos")
 #     num=int(input())
 
-# if intentos == 0:
-#     print("perdiste")
-# else: 
-#     print("Sos un genio adivinaste el numero")
+# if intentos==0:
+#     print("Perdiste")
+# else:
+#     print("SOS UN GENIO, ADIVINASTE EL NUMERO")
         
-
+# ----------------------------------------------------------------------------------------
 
 # # STREET FIGTHER
 # # Designe 2 peleadores solicitando sus nombres
@@ -101,7 +106,7 @@
 
 # print("Ingrese el nombre de los peleadores")
 # p1 = input("ingrese el nombre del peleados 1: ")
-# p2 = input("Ingrese el nombre del peleados 2:")
+# p2 = input("Ingrese el nombre del peleados 2: ")
 
 # hp1 = 50
 # hp2 = 50
@@ -138,33 +143,84 @@
 # else:
 #     print(f"Ganador {p2}")
 
+# ----------------------------------------------------------------------------------------
 
-# Explicacion del while
-while True:
-    print ('''
-        1.-
-        2.-
-        3.-Salir 
-           ''')
-    op= int(input("Ingrese una opcion:"))
-    if op == 1:
-        print("Opcion 1")
-    elif op == 2:
-        print("Opcion 2")
-    elif op == 3:
-        print("Opcion salir")
-        break
-    else:
-        print("Opcion incorrecta")
+# # Explicacion del while
+# while True:
+#     print ('''
+#         1.-
+#         2.-
+#         3.-Salir 
+#            ''')
+#     op= int(input("Ingrese una opcion:"))
+#     if op == 1:
+#         print("Opcion 1")
+#     elif op == 2:
+#         print("Opcion 2")
+#     elif op == 3:
+#         print("Opcion salir")
+#         break
+#     else:
+#         print("Opcion incorrecta")
+
+
+# ----------------------------------------------------------------------------------------
 
 
 #crear un cajero automatico 
-# tener en cuenta cajas de billetes 5000, 10000 y 20000 30 billetes de cada uno 
-# cada caja tiene 30 billetes. verificar si el monto solicitado 
-# esta disponible en el cajero  
+# tener en cuenta cajas de billetes 5.000 (150.000), 10000(300.000) y 20000(600.000) 30 billetes de cada uno  total dinero 1.050.000
+# cada caja tiene 30 billetes. 
+# verificar si el monto solicitado esta disponible en el cajero  
 # verificar si el monto solicitado es posible por el multiplo de los billetes disponibles
 # al terminar cada transaccion debe mostrar saldo disponible
 # debe haber tres usuarios cada uno con saldo correspondiente 
 #debe iniciar sesion y segun la clave asociar el saldo disponible 
+
+# Datos iniciales
+cajero = {20000: 30, 10000: 30, 5000: 30}
+usuarios = {"user1": {"clave": "1111", "saldo": 500000},
+            "user2": {"clave": "2222", "saldo": 300000},
+            "user3": {"clave": "3333", "saldo": 250000}}
+
+def total_cajero():
+    return sum(b * n for b, n in cajero.items())
+
+# Inicio de sesión
+user = input("Usuario: ")
+clave = input("Clave: ")
+
+if user in usuarios and usuarios[user]["clave"] == clave:
+    print(f"Bienvenido {user}. Saldo disponible: {usuarios[user]['saldo']}")
+    monto = int(input("Monto a retirar: "))
+
+    if monto <= usuarios[user]["saldo"] and monto <= total_cajero():
+        if monto % 5000 == 0:
+            entregar = {}
+            for b in sorted(cajero.keys(), reverse=True):
+                n = min(monto // b, cajero[b])
+                if n > 0:
+                    entregar[b] = n
+                    monto -= b * n
+            if monto == 0:
+                for b, n in entregar.items():
+                    cajero[b] -= n
+                usuarios[user]["saldo"] -= sum(b * n for b, n in entregar.items())
+                print("Retiro exitoso:", entregar)
+            else:
+                print("No se puede entregar el monto exacto con los billetes disponibles.")
+        else:
+            print("Monto no válido. Debe ser múltiplo de 5000.")
+    else:
+        print("Fondos insuficientes en cuenta o cajero.")
+
+    print(f"Saldo cuenta: {usuarios[user]['saldo']}")
+    print(f"Saldo cajero: {total_cajero()}")
+else:
+    print("Usuario o clave incorrectos.")
+
+
+
+
+
 
 
