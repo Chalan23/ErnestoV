@@ -10,7 +10,7 @@
 # else:
 #     print("Contraseña incorrecta")
 
-
+# --------------------------------------------------------------------------------------------------
 
 # # Clave con palabra y numeros debe ir entre comillas " " ya que es un str string "una cadena de texto"
 # claveCorrecta = "clave1234"
@@ -23,7 +23,7 @@
 # else: 
 #     print("Contraseña incorrecta")
 
-
+# --------------------------------------------------------------------------------------------------
 
 # Clave con 3 intentos maximos y se bloquea el acceso uso del while (control de flujo)
 claveCorrecta = 1123
