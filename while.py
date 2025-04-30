@@ -167,59 +167,67 @@
 # ----------------------------------------------------------------------------------------
 
 
-#crear un cajero automatico 
-# tener en cuenta cajas de billetes 5.000 (150.000), 10000(300.000) y 20000(600.000) 30 billetes de cada uno  total dinero 1.050.000
-# cada caja tiene 30 billetes. 
-# verificar si el monto solicitado esta disponible en el cajero  
-# verificar si el monto solicitado es posible por el multiplo de los billetes disponibles
-# al terminar cada transaccion debe mostrar saldo disponible
-# debe haber tres usuarios cada uno con saldo correspondiente 
-#debe iniciar sesion y segun la clave asociar el saldo disponible 
+# #crear un cajero automatico 
+# # tener en cuenta cajas de billetes 5.000 (150.000), 10000(300.000) y 20000(600.000) 30 billetes de cada uno  total dinero 1.050.000
+# # cada caja tiene 30 billetes. 
+# # verificar si el monto solicitado esta disponible en el cajero  
+# # verificar si el monto solicitado es posible por el multiplo de los billetes disponibles
+# # al terminar cada transaccion debe mostrar saldo disponible
+# # debe haber tres usuarios cada uno con saldo correspondiente 
+# #debe iniciar sesion y segun la clave asociar el saldo disponible 
 
-# Datos iniciales
-cajero = {20000: 30, 10000: 30, 5000: 30}
-usuarios = {"user1": {"clave": "1111", "saldo": 500000},
-            "user2": {"clave": "2222", "saldo": 300000},
-            "user3": {"clave": "3333", "saldo": 250000}}
+# cajero = {20000: 30, 10000: 30, 5000: 30}
+# saldo = 1050000
+# usuarios = {
+#     "usuario1": {"clave": 1111, "saldo": 200000},
+#     "usuario2": {"clave": 2222, "saldo": 300000},
+#     "usuario3": {"clave": 3333, "saldo": 250000}
+# }
 
-def total_cajero():
-    return sum(b * n for b, n in cajero.items())
+# def total_cajero():
+#     return sum(billete * cantidad for billete, cantidad in cajero.items())
 
-# Inicio de sesión
-user = input("Usuario: ")
-clave = input("Clave: ")
-
-if user in usuarios and usuarios[user]["clave"] == clave:
-    print(f"Bienvenido {user}. Saldo disponible: {usuarios[user]['saldo']}")
-    monto = int(input("Monto a retirar: "))
-
-    if monto <= usuarios[user]["saldo"] and monto <= total_cajero():
-        if monto % 5000 == 0:
-            entregar = {}
-            for b in sorted(cajero.keys(), reverse=True):
-                n = min(monto // b, cajero[b])
-                if n > 0:
-                    entregar[b] = n
-                    monto -= b * n
-            if monto == 0:
-                for b, n in entregar.items():
-                    cajero[b] -= n
-                usuarios[user]["saldo"] -= sum(b * n for b, n in entregar.items())
-                print("Retiro exitoso:", entregar)
-            else:
-                print("No se puede entregar el monto exacto con los billetes disponibles.")
-        else:
-            print("Monto no válido. Debe ser múltiplo de 5000.")
-    else:
-        print("Fondos insuficientes en cuenta o cajero.")
-
-    print(f"Saldo cuenta: {usuarios[user]['saldo']}")
-    print(f"Saldo cajero: {total_cajero()}")
-else:
-    print("Usuario o clave incorrectos.")
+# def mostrar_saldo():
+#     print("==ESTADO DEL CAJERO==")
+#     print(f"Sado cajero: {total_cajero()}")
+#     for billete, cantidad in cajero.items():
+#         print(f"Billetes de {billete}: {cantidad}")
+#     print("=======================")
 
 
+# user = input("Ingrese su nombre de usuario: ")
+# if user in usuarios:
+#     clave = int(input("Ingrese su clave: "))
+#     if usuarios[user]["clave"] == clave:
+#         print(f"Bienvenido {user}, su saldo es: {usuarios[user]['saldo']}")
+#         while True:
+#             mostrar_saldo()
+#             monto = int(input("Ingrese el monto a retirar (o 0 para salir): "))
+#             if monto == 0:
+#                 break
+#             if monto > total_cajero():
+#                 print("Monto solicitado no disponible en el cajero.")
+#                 continue
+#             if monto % 5000 != 0:
+#                 print("El monto solicitado no es múltiplo de 5000.")
+#                 continue
+#             billetes_necesarios = {}
+#             for billete in sorted(cajero.keys(), reverse=True):
+#                 cantidad_billetes = min(monto // billete, cajero[billete])
+#                 if cantidad_billetes > 0:
+#                     billetes_necesarios[billete] = cantidad_billetes
+#                     monto -= billete * cantidad_billetes
+#                     cajero[billete] -= cantidad_billetes
 
+#             if monto > 0:
+#                 print("No hay suficientes billetes para completar la transacción.")
+#                 for billete, cantidad in billetes_necesarios.items():
+#                     cajero[billete] += cantidad
+#             else:
+#                 usuarios[user]["saldo"] -= sum(billete * cantidad for billete, cantidad in billetes_necesarios.items())
+#                 print(f"Retiraste: {sum(billete * cantidad for billete, cantidad in billetes_necesarios.items())}")
+#     else:
+#         print("Clave incorrecta.")
 
 
 

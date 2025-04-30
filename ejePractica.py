@@ -158,5 +158,30 @@
 
 # -------------------------------------------------------------------------------------------------
 
+# # 13.- promedio calcular 3 notas
+# nota1 = float(input("Ingrese la primera nota: "))
+# nota2 = float(input("Ingrese la segunda nota: "))
+# nota3 = float(input("Ingrese la tercera nota: "))
 
+# promedio = (nota1+nota2+nota3)/3
+
+# print(f"Su promedio es de {promedio} ")
+
+# -------------------------------------------------------------------------------------------------
+
+# # 14.- promedio 3 notas y verificar si paso o no de curso 
+
+# nota1 = float(input("Ingresa tu primera nota: "))
+# nota2 = float(input("Ingresa tu segunda nota: "))
+# nota3 = float(input("Ingresa tu primera nota: "))
+
+# promedio = (nota1+nota2+nota3)/3
+
+# print(f"Su promedio es: {promedio}")
+
+# if promedio >= 4:
+#     print("Pasa de curso")
+
+# else:
+#     print("No pasa de curso")
 
