@@ -230,5 +230,66 @@
 #         print("Clave incorrecta.")
 
 
+# #crear un cajero automatico 
+# # tener en cuenta cajas de billetes 5.000 (150.000), 10000(300.000) y 20000(600.000) 30 billetes de cada uno  total dinero 1.050.000
+# # cada caja tiene 30 billetes. 
+# # verificar si el monto solicitado esta disponible en el cajero  
+# # verificar si el monto solicitado es posible por el multiplo de los billetes disponibles
+# # al terminar cada transaccion debe mostrar saldo disponible
+# # debe haber tres usuarios cada uno con saldo correspondiente 
+# #debe iniciar sesion y segun la clave asociar el saldo disponible 
+
+# # repaso
+# intentos=3
+
+# while intentos > 0:
+#     intentos-=1 #(intentos = intentos -1) se puede poner de las dos formas
+    
+#     color = input("Ingrese el color ")
+
+#     if color.lower()!="negro":
+#         print("El color no es el requerido")
+#     else:
+#         print("Este es el color requerido")
+#         break
+
+# La Florida 20%, La Pintana 30%, Puente ALto 25%, San Joaquin 15%.
+# Grupo familiar: 1=>2%, 2 a 4=>3%, 5 o mas =>4%
+# Preguntar al usuario en que comuna vive
+# Pregunta al usuario con cuantas personas vive 
+# El arancel actual es de 200.000 por semestre
+# Basado en las respuestas del usuario y en
+# La informacio dada, calcular se descuento.
 
 
+print("Selecciones la comuna donde usted vive")
+print('''
+    La Florida 
+    La Pintana 
+    Puente lto 
+    San Joaquin  
+''')
+comuna = input("En que comuna vive: ")
+familia = int(input("cuantas personas viven es su casa incluyendolo a usted: "))
+
+if comuna == "la florida":
+    descuento = 20
+elif comuna == "la pintana":
+    descuento = 30
+elif comuna == "puente alto":
+    descuento = 25
+elif comuna == "san joaquin":
+    descuento = 15
+else:
+    print("Ingrese una opcion correcta ")
+
+if familia == 1:
+    descuento += 2
+elif familia >=2 and familia <= 4:
+    descuento += 3
+else:
+    descuento += 4
+
+descTotal = 200000 * (descuento / 100)
+print(f"El descuento total es de: {descTotal}")
+print(f"El arancel a pagar es de: {200000 - descTotal}")
