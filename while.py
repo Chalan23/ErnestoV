@@ -282,6 +282,7 @@
 
 # --------------------------------------------------------------------------------------------------
 
+
 # # clasficar segun categoria y precio
 # # cat 1 +200, cat 2 +400, cat 3 +600
 # # precios : 1000 y menos ; 3%, entre 1001 y 5000 ; 5%, 5001 y mas 6%
@@ -289,140 +290,103 @@
 # # agregar impuestos al precio, segun la cat y luego
 # # aplicar descuento al total de la boleta segun el monto
 
-# # Ej:
-# # producto 1, cat 2, 1500 + 400
-# # producto 2, cat 1, 8000 + 200
-# # El total es 10100 * -6%
-# # El total a pagar es 9494
-
-# total = 0
+# total = 0 
 
 # print("Seleccione una categoría:")
-# print("1.- Zapatillas")
-# print("2.- Poleras")
-# print("3.- Pelotas")
+# print("1.- Zapatilla")
+# print("2.- Polera")
+# print("3.- Pelota")
 
 # categoria = int(input("Ingrese una categoría (1, 2 o 3): "))
 
 # if categoria == 1:
-#     print("1.- Zapatilla de Fútbol $1000")
-#     print("2.- Zapatilla de Futbolito $700")
-#     print("3.- Zapatilla de Tenis $2000")
-#     op = int(input("Seleccione el producto: "))
+#     print("1.- Zapatilla fútbol $7000")
+#     print("2.- Zapatilla futbolito $6000")
+#     print("3.- Zapatilla tenis $8000")
+#     op = int(input("Seleccione la opción a comprar: "))
 #     if op == 1:
-#         total += 1000 + 200
-#     elif op == 2:
-#         total += 700 + 200
-#     elif op == 3:
-#         total += 2000 + 200
+#         total += 7000 + 200
+#     elif op == 2: 
+#         total += 6000 + 200
+#     elif op == 3: 
+#         total += 8000 + 200
 #     else:
-#         print("Opción no válida")
+#         print("Opción inválida")
 
 # elif categoria == 2:
-#     print("1.- Polera de Fútbol $1200")
-#     print("2.- Polera de Futbolito $1000")
-#     print("3.- Polera de Tenis $2200")
-#     op = int(input("Seleccione el producto: "))
+#     print("1.- Polera fútbol $2500")
+#     print("2.- Polera futbolito $2200")
+#     print("3.- Polera tenis $3000")
+#     op = int(input("Seleccione la opción a comprar: "))
 #     if op == 1:
-#         total += 1200 + 400
-#     elif op == 2:
-#         total += 1000 + 400
-#     elif op == 3:
+#         total += 2500 + 400
+#     elif op == 2: 
 #         total += 2200 + 400
+#     elif op == 3: 
+#         total += 3000 + 400
 #     else:
-#         print("Opción no válida")
+#         print("Opción inválida")
 
 # elif categoria == 3:
-#     print("1.- Pelota de Fútbol $5200")
-#     print("2.- Pelota de Futbolito $2000")
-#     print("3.- Pelota de Tenis $1500")
-#     op = int(input("Seleccione el producto: "))
+#     print("1.- Pelota fútbol $1000")
+#     print("2.- Pelota futbolito $800")
+#     print("3.- Pelota tenis $1200")
+#     op = int(input("Seleccione la opción a comprar: "))
 #     if op == 1:
-#         total += 5200 + 600
-#     elif op == 2:
-#         total += 2000 + 600
-#     elif op == 3:
-#         total += 1500 + 600
+#         total += 1000 + 600
+#     elif op == 2: 
+#         total += 800 + 600
+#     elif op == 3: 
+#         total += 1200 + 600
 #     else:
-#         print("Opción no válida")
-
+#         print("Opción inválida")
 # else:
-#     print("Opción no válida")
+#     print("Opción inválida")
 
 
 # if total <= 1000:
 #     total *= 0.97
-# elif 1001 <= total <= 5000:  
-#     total *= 0.95
-# elif total >= 5001:
-#     total *= 0.94
+# elif 1001 <= total <= 5000:
+#     total *= 0.95 
+# elif total > 5001:
+#     total *= 0.96
 
 # print(f"El total a pagar es: {total:.2f}")
 
+# --------------------------------------------------------------------------------------------------
 
-# # clasficar segun categoria y precio
-# # cat 1 +200, cat 2 +400, cat 3 +600
-# # precios : 1000 y menos ; 3%, entre 1001 y 5000 ; 5%, 5001 y mas 6%
-# # poner listado de 3 productos por categoria, las cat son 1, 2 y 3
-# # agregar impuestos al precio, segun la cat y luego
-# # aplicar descuento al total de la boleta segun el monto
+# # La Florida 20%, La Pintana 30%, Puente Alto 25%, San Joaquin 15%.
+# # Grupo familiar: 1=>2%, 2 a 4=>3%, 5 o mas =>4%
+# # Preguntar al usuario en que comuna vive
+# # Pregunta al usuario con cuantas personas vive 
+# # El arancel actual es de 200.000 por semestre
+# # Basado en las respuestas del usuario y en
+# # La informacio dada, calcular se descuento.
 
-total = 0 
+descuento = 0
+print("La Florida 20%, La Pintana 30%, Puente Alto 25%, San Joaquin 15%")
+comuna = (input("Ingrese en la comuna que vives: ")).lower()
+familia = int(input("Cuantas personas viven en su casa incluyense a usted: "))
 
-print("seleccione una categoria:")
-print("1.-Zapatilla")
-print("2.-Polera")
-print("3.-Pelota")
-categoria = int(input("Ingrese una categoria (1, 2 o 3): "))
-if categoria == 1:
-    print("1.-Zapatilla futbol $7000")
-    print("2.-Zapatilla futbolito $6000")
-    print("3.-Zapatilla tenis $8000")
-    op = int(input("Selecione la opcion a comprar: "))
-    if op == 1:
-         total += 7000 + 200
-    elif op == 2: 
-         total += 6000 + 200
-    elif op == 3: 
-         total += 8000 + 200
-    else:
-         print("opcion invalida")
-
-if categoria == 2:
-    print("1.-Polera futbol $2500")
-    print("2.-Polera futbolito $2200")
-    print("3.-Polera tenis $3000")
-    op = int(input("Selecione la opcion a comprar: "))
-    if op == 1:
-         total += 2500 + 400
-    elif op == 2: 
-         total += 2200 + 400
-    elif op == 3: 
-         total += 3000 + 400
-    else:
-         print("opcion invalida")
-
-if categoria == 3:
-    print("1.-Pelota futbol $1000")
-    print("2.-Pelota futbolito $800")
-    print("3.-Pelota tenis $1200")
-    op = int(input("Selecione la opcion a comprar: "))
-    if op == 1:
-         total += 1000 + 600
-    elif op == 2: 
-         total += 800 + 600
-    elif op == 3: 
-         total += 1200 + 600
-    else:
-         print("opcion invalida")
+if comuna == "la florida":
+    descuento = 20
+elif comuna == "la pintana":
+    descuento = 30
+elif comuna == "puente alto":
+    descuento = 25
+elif comuna == "san joaquin":
+    descuento = 15
 else:
-        print("opcion invalida")
+    print("Opcion invalida")
 
-if total <= 1000:
-     total *=0.97
-elif 1001 <= total <= 5000:
-     total *=0.95 
-elif total > 5001:
-     total *=0.96
+if familia == 1:
+    descuento += 2
+elif familia >= 2 and familia <= 4:
+    descuento += 3
+else:
+    descuento += 4
     
-print(f"El total a pagar es: {total:.2f}")
+descuentoTotal = 200000 * (descuento / 100)
+print(f"Su descuento total es: {descuentoTotal} ")
+print(f"El total a pagar es de: {200000-descuentoTotal} ")
+    
