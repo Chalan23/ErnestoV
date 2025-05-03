@@ -355,38 +355,39 @@
 
 # --------------------------------------------------------------------------------------------------
 
-# # La Florida 20%, La Pintana 30%, Puente Alto 25%, San Joaquin 15%.
-# # Grupo familiar: 1=>2%, 2 a 4=>3%, 5 o mas =>4%
-# # Preguntar al usuario en que comuna vive
-# # Pregunta al usuario con cuantas personas vive 
-# # El arancel actual es de 200.000 por semestre
-# # Basado en las respuestas del usuario y en
-# # La informacio dada, calcular se descuento.
+# # # La Florida 20%, La Pintana 30%, Puente Alto 25%, San Joaquin 15%. 
+# # # Grupo familiar: 1=>2%, 2 a 4=>3%, 5 o mas =>4%
+# # # Preguntar al usuario en que comuna vive
+# # # Pregunta al usuario con cuantas personas vive 
+# # # El arancel actual es de 200.000 por semestre
+# # # Basado en las respuestas del usuario y en
+# # # La informacio dada, calcular se descuento.
 
-descuento = 0
-print("La Florida 20%, La Pintana 30%, Puente Alto 25%, San Joaquin 15%")
-comuna = (input("Ingrese en la comuna que vives: ")).lower()
-familia = int(input("Cuantas personas viven en su casa incluyense a usted: "))
+# descuento = 0
 
-if comuna == "la florida":
-    descuento = 20
-elif comuna == "la pintana":
-    descuento = 30
-elif comuna == "puente alto":
-    descuento = 25
-elif comuna == "san joaquin":
-    descuento = 15
-else:
-    print("Opcion invalida")
+# print("La Florida 20%, La Pintana 30%, Puente Alto 25%, San Joaquin 15%")
+# comuna = (input("Ingrese en la comuna que vives: ")).lower()
+# familia = int(input("Cuantas personas viven en su casa incluyense a usted: "))
 
-if familia == 1:
-    descuento += 2
-elif familia >= 2 and familia <= 4:
-    descuento += 3
-else:
-    descuento += 4
+# if comuna == "la florida":
+#     descuento = 20
+# elif comuna == "la pintana":
+#     descuento = 30
+# elif comuna == "puente alto":
+#     descuento = 25
+# elif comuna == "san joaquin":
+#     descuento = 15
+# else:
+#     print("Opcion invalida")
+
+# if familia == 1:
+#     descuento += 2
+# elif familia >= 2 and familia <= 4:
+#     descuento += 3
+# else:
+#     descuento += 4
     
-descuentoTotal = 200000 * (descuento / 100)
-print(f"Su descuento total es: {descuentoTotal} ")
-print(f"El total a pagar es de: {200000-descuentoTotal} ")
+# descuentoTotal = 200000 * (descuento / 100)
+# print(f"Su descuento total es: {descuentoTotal} ")
+# print(f"El total a pagar es de: {200000-descuentoTotal} ")
     
