@@ -1,14 +1,17 @@
 # #Inicio de estudio con ciclo for 
+# ---------------------------------------------------------------# 
 
 # for i in range(5): #todos los indices comienzan en 0
 #     print("repeticion", i+1) 
 
+# ---------------------------------------------------------------# 
 # pide un numero al usuario y muestra cantidad de repeticiones
 # num=int(input("Ingrese un numero: "))
 
 # for i in range(num): 
 #     print("repeticion", i+1) 
 
+# ---------------------------------------------------------------# 
 
 # # pide un numero al usuario y muestra la tabla de multiplicar hasta el 10
 
@@ -17,6 +20,7 @@
 # for i in range(10): 
 #     print(num, "X" , i+1, "=", num*(i+1))
 
+# ---------------------------------------------------------------# 
 
 # # pide un numero al usuario y muestra la tabla de multiplicar hasta el 10 (Profe)
 
@@ -30,7 +34,7 @@
 #     for i in range(10): 
 #         print(j+1, "X" , i+1, "=" , (i+1)*(j+1))
 
-
+# ---------------------------------------------------------------# 
 
 # #promedio de notas
 # cant=int(input("ingrese la cantidad de notas"))
@@ -44,6 +48,7 @@
 # prom=suma/cant
 # print("su promedio es", prom)
 
+# ---------------------------------------------------------------# 
 
 # # REVISAR
 # # Cantidad de alumnos y sus promedios 
@@ -66,7 +71,7 @@
 #     else:
 #         print("El alumno reprobo")
 
-
+# ---------------------------------------------------------------# 
 
 # # Pida al usuario un numero y sume todos los digitos del 1 hasta ese digito
 
@@ -76,7 +81,7 @@
 #     suma+=i+1
 # print("La suma de los numeros es", suma)
 
-
+# ---------------------------------------------------------------# 
 
 # # par e impar
 
@@ -87,7 +92,7 @@
 # else:
 #     print("El numero es impar")
 
-
+# ---------------------------------------------------------------# 
 
 # #pida al usuario una cantidad de numeros y verifique si es par o impar
 
@@ -101,6 +106,7 @@
 #     else:
 #         print("El numero es impar")
 
+# ---------------------------------------------------------------# 
 
 # #designe dos votantes, pida cantidad de votantes y muestre los resultados
 # #verifique quien gano y considere un empate.
@@ -134,8 +140,10 @@
 # else:
 #     print("Empate")
 
+# ---------------------------------------------------------------# 
 
-#definir dos candidatos y pedir la cantidad de votos, mostrar resultados y verificar quien gano o si hubo empate. (profe)
+#definir dos candidatos y pedir la cantidad de votos, mostrar resultados y verificar
+#quien gano o si hubo empate. (profe)
 
 # c1="Aqua"
 # c2="koku"
@@ -175,7 +183,7 @@
 # for i in pa:
 #     print(i)
 
-
+# ---------------------------------------------------------------# 
 
 # frase= input("ingrese una frase: ")
 # c=0
@@ -193,7 +201,7 @@
 # print("La cantidad de consonantes es", cons)
 
 
-
+# ---------------------------------------------------------------# 
 
 
 # cant=int(input("Ingrese un numero: "))
@@ -206,7 +214,7 @@
 #     else:
 #         print("El numero es impar")
 
-
+# ---------------------------------------------------------------# 
 
 # pedir un numero y mostrar todos los pares e impares desde 1 hasta el numero ingresado
 
@@ -218,6 +226,7 @@
 #     else:
 #         print(f"es numero {i} impar")
 
+# ---------------------------------------------------------------# 
 
 # # super mercado 
 # # ingrese la cantidad de productos 
