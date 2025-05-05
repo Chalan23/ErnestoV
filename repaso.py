@@ -205,7 +205,7 @@
 #         b = int(input("Ingresa el segundo número: "))
 #         print(f"La suma es: {a + b}")
 #     elif opcion == "3":
-#         print("Python es genial 😎")
+#         print("Python es genial")
 #     elif opcion == "4":
 #         print("Saliendo del programa...")
 #     else:
@@ -215,8 +215,148 @@
 # for
 # ---------------------------------------------------------------# 
 
-# tablas de multiplicar
-num = int(input("Ingrese un numero a multiplicar: "))
+# # tablas de multiplicar
+# num = int(input("Ingrese un numero a multiplicar: "))
 
-for i in range(1,11):
-    print(num, "X" , i, "=" , i*num)
+# for i in range(1,11):
+#     print(num, "X" , i, "=" , i*num)
+
+# ---------------------------------------------------------------# 
+
+# # STREET FIGTHER #
+
+# # Designe 2 peleadores solicitando sus nombres
+# # cada peleador tiene 50 HP, debe mostrar la 
+# # barra de energia. Las peleas son por turnos #print("[]"*20)
+# # cada turno el peleador ataca entre 3 y 15
+# # Existe posibilidad de ataque critico del 20% sera atk*2
+# # gana el que le quita todo el HP al rival
+
+# import random
+# import time
+
+# print("Quienes son los peleadores")
+# p1 = input("Ingresa el nombre del primer peleador: ")
+# p2 = input("Ingresa el nombre del segundo peleador: ")
+# hp1 = 50
+# hp2 = 50
+
+# turno = random.randint(1,2)
+
+# while hp1 > 0 and hp2 > 0:
+#     if turno % 2 == 0:
+#         print(f"turno de {p1}")
+#         atk = random.randint(3,15)
+#         critico = random.randint(1,5)
+#         if critico == 3:
+#             atk *=2
+#             print("Ataque Critico!")
+#         hp2 -= atk
+#         hp2 = max(0, hp2)
+#         print(f"El ataque de {p1} fue de {atk}")
+#         print(f"Vida de {p2}: {'<3' * hp2}")
+#     else:
+#         print(f"turno de {p2}")
+#         atk = random.randint(3,15)
+#         critico = random.randint(1,5)
+#         if critico == 3:
+#             atk *=2
+#             print("Ataque critico!")
+#         hp1 -= atk
+#         hp1 = max(0, hp1)
+#         print(f"El ataque de {p2} fue de {atk}")
+#         print(f"La vida de {p1}: {'<3' * hp2}")
+        
+#     turno += 1
+#     time.sleep(1)
+# if hp1 > hp2:
+#     print(f"Ganador {p1}")
+# else:
+#     print(f"Ganador {p2}")
+
+# ---------------------------------------------------------------# 
+
+# # VOTATOON
+# # Designe 2 cantdidatos. Pregunte cuanto votantes son
+# # por cada votante , debe peguntar por quien votrá
+# # cuente la cantidad de votos y muestre los resultados
+# # definir quien ganó la votacion. Considere empate
+print("Elecciones presidenciales")
+numVotantes = int(input("Cuantas personas votan? "))
+
+guruGuru = 0
+tutuTutu = 0
+
+print("Por quien vas a votar?")
+print("1.-guruGuru")
+print("2.-tutuTutu")
+
+for i in range(numVotantes):
+    voto = int(input(f"El votante {i+1} por quien vota? "))
+    if voto == 1:
+        guruGuru += 1
+    elif voto == 2:
+        tutuTutu += 1
+    else: 
+        print("Voto nulo")
+
+print("Conteo de votos")    
+print(f"total votos para guruGuru es de: {guruGuru}")
+print(f"total votos para tutoTutu es de: {tutuTutu}")
+
+if guruGuru > tutuTutu:
+    print(f"Gano tutuTutu")
+elif tutuTutu > guruGuru:
+    print(f"Gano guruGuru")
+else: 
+    print("Empate")
+        
+# ---------------------------------------------------------------# 
+
+# Calcular el araccel a pagar segun grupo familiar y comuna en la que reside
+# A continuacion , los descuentos por cumuna:
+# La Florida 20%, La pintana 30%, Puente Alto 25%, San Joaquin 15%
+# Grupo familiar: 1=>2%, 2 a 4=>3%, 5 o mas=>4%
+# Preguntar al usuario en que comuna vive
+# Preguntar al usuario con cuantas personas vive
+# El arancel actual es de 200.000 por semestre
+# Basados en las respuestas del usuario  y en 
+# la informacion dada, calcular su descuento
+'''
+ej :
+Ingrese su comuna : La Florida
+Ingrese su grupo familiar( numero entero usted incluido ) : 4
+EL total del descuento es 23%
+EL total a pagar es $154.000
+'''
+
+descuento = 0
+print("La Florida 20%, La Pintana 30%, Puente Alto 25%, San Jaoquin 15%")
+comuna = input("En que comuna vives? ").lower()
+personas = int(input("Cuantas personas viven en tu casa? "))
+
+if comuna == "la florida":
+    descuento = 20
+elif comuna == "la pintana":
+    descuento = 30
+elif comuna ==  "puente alto":
+    descuento = 25
+else:
+    descuento = 15
+   
+if personas == 1:
+    descuento += 2
+elif personas >= 2 and personas <= 4:
+    descuento += 3
+else:
+    descuento += 4
+
+totalDesc = 200000 * (descuento / 100)
+
+print(f"Su descuento total es {totalDesc}")
+print(f"El total a pagar es de {200000 - totalDesc}")
+
+# ---------------------------------------------------------------# 
+
+
+# ---------------------------------------------------------------# 
