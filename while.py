@@ -363,31 +363,76 @@
 # # Basado en las respuestas del usuario y en
 # # La informacio dada, calcular se descuento.
 
-descuento = 0
+# descuento = 0
 
-print("La Florida 20%, La Pintana 30%, Puente Alto 25%, San Joaquin 15%")
-comuna = (input("Ingrese en la comuna que vives: ")).lower()
-familia = int(input("Cuantas personas viven en su casa incluyense a usted: "))
+# print("La Florida 20%, La Pintana 30%, Puente Alto 25%, San Joaquin 15%")
+# comuna = (input("Ingrese en la comuna que vives: ")).lower()
+# familia = int(input("Cuantas personas viven en su casa incluyense a usted: "))
 
-if comuna == "la florida":
-    descuento = 20
-elif comuna == "la pintana":
-    descuento = 30
-elif comuna == "puente alto":
-    descuento = 25
-elif comuna == "san joaquin":
-    descuento = 15
-else:
-    print("Ingrese una opcion correcta ")
+# if comuna == "la florida":
+#     descuento = 20
+# elif comuna == "la pintana":
+#     descuento = 30
+# elif comuna == "puente alto":
+#     descuento = 25
+# elif comuna == "san joaquin":
+#     descuento = 15
+# else:
+#     print("Ingrese una opcion correcta ")
 
-if familia == 1:
-    descuento += 2
-elif familia >=2 and familia <= 4:
-    descuento += 3
-else:
-    descuento += 4
+# if familia == 1:
+#     descuento += 2
+# elif familia >=2 and familia <= 4:
+#     descuento += 3
+# else:
+#     descuento += 4
 
-descTotal = 200000 * (descuento / 100)
-print(f"El descuento total es de: {descTotal}")
-print(f"El arancel a pagar es de: {200000 - descTotal}")
+# descTotal = 200000 * (descuento / 100)
+# print(f"El descuento total es de: {descTotal}")
+# print(f"El arancel a pagar es de: {200000 - descTotal}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
