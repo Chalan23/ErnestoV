@@ -269,77 +269,117 @@
 
 # -------------------------------------------------------------------------------------------------
 
-# N°2 ejercicios para la prueba (Concierto)
-# el usuario cuenta con descuentos por comprar su entrada con tarjetas 
-# banco bci 30%, banco de chile 20%, banco falabella 25%
-# cancha $100.000, galeria $150.000, vip 250.000 (Recargo por entrada $20.000) 
-# preguntar cuantas entradas desea comprar
-# y seleccionar con que banco va a pagar
-print("Crear usuario")
-user = input("Ingresa tu nombre: ").lower()
-clave = int(input("Ingresa tu clave (número): "))
+# # N°2 ejercicios para la prueba (Concierto)
+# # el usuario cuenta con descuentos por comprar su entrada con tarjetas 
+# # banco bci 30%, banco de chile 20%, banco falabella 25%
+# # cancha $100.000, galeria $150.000, vip 250.000 (Recargo por entrada $20.000) 
+# # preguntar cuantas entradas desea comprar
+# # y seleccionar con que banco va a pagar
+# print("Crear usuario")
+# user = input("Ingresa tu nombre: ").lower()
+# clave = int(input("Ingresa tu clave (número): "))
 
-print("!-----------------------------------------!")
-print("Inicia sesión")
+# print("!-----------------------------------------!")
+# print("Inicia sesión")
 
-usuario = input("Ingresa tu nombre: ").lower()
-contraseña = int(input("Ingresa tu clave: "))
+# usuario = input("Ingresa tu nombre: ").lower()
+# contraseña = int(input("Ingresa tu clave: "))
 
-while usuario != user or contraseña != clave:
-    print("Nombre de usuario o clave incorrectos. Intenta de nuevo.")
-    usuario = input("Ingresa tu nombre: ").lower()
-    contraseña = int(input("Ingresa tu clave: "))
+# while usuario != user or contraseña != clave:
+#     print("Nombre de usuario o clave incorrectos. Intenta de nuevo.")
+#     usuario = input("Ingresa tu nombre: ").lower()
+#     contraseña = int(input("Ingresa tu clave: "))
 
-print("¡Inicio de sesión exitoso!")
+# print("¡Inicio de sesión exitoso!")
 
     
 
-print("Bienvenido al sistema de compra de entradas")
-print("!-----------------------------------------!")
-entradas = int(input("Cuantas entradas deseas comprar: "))
+# print("Bienvenido al sistema de compra de entradas")
+# print("!-----------------------------------------!")
+# entradas = int(input("Cuantas entradas deseas comprar: "))
 
-print("PROMOCION DESCUENTO PAGO CON TARJETA")
-print("1.-BCI 30% - 2.-Banco de Chile 20% - 3.-Banco Falabella 25%")
-banco = int(input("Elije el banco con el que pagas: "))
+# print("PROMOCION DESCUENTO PAGO CON TARJETA")
+# print("1.-BCI 30% - 2.-Banco de Chile 20% - 3.-Banco Falabella 25%")
+# banco = int(input("Elije el banco con el que pagas: "))
 
-print("Elige tu sector de preferencia")
-print("1.-Cancha $100.000")
-print("2.-Galeria $150.000")
-print("3.-Vip $250.000")
-print("Recuerda el recargo por servicio es de $20.000")
+# print("Elige tu sector de preferencia")
+# print("1.-Cancha $100.000")
+# print("2.-Galeria $150.000")
+# print("3.-Vip $250.000")
+# print("Recuerda el recargo por servicio es de $20.000")
 
-sector = int(input("En que sector quieres estar (1, 2 o 3): "))
+# sector = int(input("En que sector quieres estar (1, 2 o 3): "))
 
-if sector == 1:
-    precioSector = 100000 
-elif sector== 2:
-    precioSector = 150000 
-elif sector == 3:
-    precioSector = 250000
+# if sector == 1:
+#     precioSector = 100000 
+# elif sector== 2:
+#     precioSector = 150000 
+# elif sector == 3:
+#     precioSector = 250000
+# else:
+#     print("Opcion invalida")
+#     exit()
+    
+# precioEntradas = precioSector +20000
+# precioTotal = entradas * precioEntradas
+
+
+# if banco == 1:
+#     desc = precioTotal * 0.3
+# elif banco == 2:
+#     desc = precioTotal * 0.2
+# elif banco == 3:
+#     desc = precioTotal * 0.25
+# else:
+#     print("opcion invalida")
+#     exit()
+    
+# precioFinal = precioTotal - desc    
+
+# print("!-----------------------------------------!")
+# print(f"Usted lleva {entradas} entradas")
+# print(f"El descuento total es de ${desc}")
+# print(f"El total a pagar es de ${precioFinal}")
+# print("!-----------------------------------------!")
+
+
+# -------------------------------------------------------------------------------------------------
+
+# crear un programa que pida la cantidad de ramos 
+# luego pida el promedio por cada materia 
+# basado en su promedio final, aplique puntaje de beneficios
+# 4.5 y 5 : 300, 5.1 y 6 : 500, 6.1  y 7.: 800
+# agregar puntaje segun carrera 
+# tecnico: +60, ingeneria: +40, diplomado: +20
+
+cantRamos = int(input("Ingrese la cantidad de ramos: "))
+suma = 0
+for i in range(cantRamos):
+    notaRamos = float(input(f"Ingrese la nota del ramo {i+1}: "))
+    suma+=notaRamos
+promedio = suma/cantRamos
+print("Su promedio final es ",round(promedio,1))
+if promedio >= 4.5 and promedio <= 5.0:
+    puntaje = 300
+    print(f"Su puntaje de beneficios es de: {puntaje}")
+elif promedio >= 5.1 and promedio <= 6.0:
+    puntaje = 500 
+    print(f"Su puntaje de beneficios es de {puntaje}")
+elif promedio >= 6.1 and promedio <= 7.0:
+    puntaje = 800 
+    print(f"Su puntaje de beneficios es de {puntaje}")
 else:
-    print("Opcion invalida")
-    exit()
+    print("Lo sentimos no tiene beneficios es muy pete!")
+
+
+print("1.-Tecnico - 2.-Ingeneria - 3.-Diplomado")    
+carrera = int(input("Elije tu grado: "))
+if carrera == 1:
+    puntaje += 60
+elif carrera == 2:
+    puntaje += 40
+elif carrera == 3:
+    puntaje += 20
     
-precioEntradas = precioSector +20000
-precioTotal = entradas * precioEntradas
-
-
-if banco == 1:
-    desc = precioTotal * 0.3
-elif banco == 2:
-    desc = precioTotal * 0.2
-elif banco == 3:
-    desc = precioTotal * 0.25
-else:
-    print("opcion invalida")
-    exit()
-    
-precioFinal = precioTotal - desc    
-
-print("!-----------------------------------------!")
-print(f"Usted lleva {entradas} entradas")
-print(f"El descuento total es de ${desc}")
-print(f"El total a pagar es de ${precioFinal}")
-print("!-----------------------------------------!")
-
+print(f"Su puntaje total es de {puntaje}")
 
