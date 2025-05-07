@@ -241,48 +241,48 @@ EL total a pagar es: 9494
 
 # ---------------------------------------------------------------#
 
-# crear un programa que pida la cantidad de ramos 
-# luego pida el promedio por cada materia 
-# basado en su promedio final, aplique puntaje de beneficios
-# 4.5 y 5 : 300, 5.1 y 6 : 500, 6.1  y 7.: 800
-# agregar puntaje segun carrera 
-# tecnico: +60, ingeneria: +40, diplomado: +20
+# # crear un programa que pida la cantidad de ramos 
+# # luego pida el promedio por cada materia 
+# # basado en su promedio final, aplique puntaje de beneficios
+# # 4.5 y 5 : 300, 5.1 y 6 : 500, 6.1  y 7.: 800
+# # agregar puntaje segun carrera 
+# # tecnico: +60, ingeneria: +40, diplomado: +20
         
-mat=int(input("Ingrese la cant de materias: "))
-suma=0
-for i in range(mat):
-   notaramo=float(input(f"Ingrese la nota del ramo{i+1}: "))
-   suma+=notaramo
-prom=suma/mat
-print("Su nota final es ", round(prom,1))
-if prom>=4.5 and prom<=5.0:
-   puntaje=300
-   print( f"Su puntaje de beneficios es de {puntaje}")
-elif prom>=5.2 and prom<=6.0:
-    puntaje=500
-    print( f"Su puntaje de beneficios es de {puntaje}")
-elif prom>=6.1 and prom<=7.0:
-    puntaje=800
-    print( f"Su puntaje de beneficios es de {puntaje}")
-else:
-   print(" Es tan porro que no tiene beneficios")
+# mat=int(input("Ingrese la cant de materias: "))
+# suma=0
+# for i in range(mat):
+#    notaramo=float(input(f"Ingrese la nota del ramo{i+1}: "))
+#    suma+=notaramo
+# prom=suma/mat
+# print("Su nota final es ", round(prom,1))
+# if prom>=4.5 and prom<=5.0:
+#    puntaje=300
+#    print( f"Su puntaje de beneficios es de {puntaje}")
+# elif prom>=5.2 and prom<=6.0:
+#     puntaje=500
+#     print( f"Su puntaje de beneficios es de {puntaje}")
+# elif prom>=6.1 and prom<=7.0:
+#     puntaje=800
+#     print( f"Su puntaje de beneficios es de {puntaje}")
+# else:
+#    print(" Es tan porro que no tiene beneficios")
 
-car=int(input('''
-            Ingrese su tipo de grado
-              1.- Tecnico
-              2.- Ingenieria
-              3.- Diplomado
-              '''))
-if car==1:
-   puntaje+=60
-elif car==2:
-   puntaje+=40
-elif car==3:
-   puntaje+=20
-else:
-   print("no es nuemro valido")
+# car=int(input('''
+#             Ingrese su tipo de grado
+#               1.- Tecnico
+#               2.- Ingenieria
+#               3.- Diplomado
+#               '''))
+# if car==1:
+#    puntaje+=60
+# elif car==2:
+#    puntaje+=40
+# elif car==3:
+#    puntaje+=20
+# else:
+#    print("no es nuemro valido")
 
-print( " El puntaje de beneficios es ", puntaje)
+# print( " El puntaje de beneficios es ", puntaje)
     
 
 # ---------------------------------------------------------------#
@@ -416,13 +416,133 @@ print( " El puntaje de beneficios es ", puntaje)
 # else:
 #     print(f"Ha ganado {dragon2}🐉")
 
+# ---------------------------------------------------------------#
 
+
+# # 🥇 Ejercicio 1 (Nivel Básico)
+# # Enunciado:
+# # Crea un programa que solicite al usuario su edad y diga si puede votar o no. En Chile, se puede votar desde los 18 años.
+# # Instrucciones:
+# # Solicita la edad del usuario con input().
+# # Convierte el dato a entero.
+# # Usa una estructura if para determinar si puede o no votar.
+# # Muestra un mensaje adecuado.
+
+# print("Votaciones Presidenciales 2025")
+
+# edad = int(input("Ingresa tu edad para validar si puede votar: "))
+
+# if edad >= 18:
+#     print("Felicidades tienes derecho a voto.")
+# else:
+#     print("Lo sentimos no tienes la edad suficiente para votar.")
+
+# ---------------------------------------------------------------#
+
+# # 🥈 Ejercicio 2 (Nivel Medio - Distinto a Street Fighter)
+# # Enunciado: CARRERA DE CARACOLES 🐌🏁
+# # Dos caracoles están compitiendo en una carrera. Cada uno avanza por turnos una cantidad aleatoria de pasos entre 1 y 6.
+# # Gana el primer caracol que llegue o supere los 30 pasos.
+# # Instrucciones:
+# # Pide al usuario los nombres de los dos caracoles.
+# # Cada caracol parte desde 0 pasos.
+# # En cada turno, uno de los caracoles avanza una cantidad aleatoria entre 1 y 6.
+# # Muestra visualmente el avance con "." por cada paso. Ej: print("." * pasos).
+# # Alternan los turnos hasta que uno llegue a 30 o más pasos.
+# # Al final, muestra quién ganó y con cuántos pasos.
+
+# import random
+# import time
+
+# turno = random.randint(1, 2)
+# caracol1 = input("Nombre del primer caracol: ")
+# caracol2 = input("Nombre del segundo caracol: ")
+
+# pasos1 = 0
+# pasos2 = 0
+
+# while pasos1 < 30 and pasos2 < 30: 
+#     if turno % 2 == 0:
+#         print(f"Turno de {caracol1}")
+#         pasos = random.randint(1, 6)
+#         pasos1 += pasos
+#         pasos1 = min(30, pasos1)  
+#         print(f"{caracol1} avanzó {pasos1} pasos")
+#         print(f"Pasos de {caracol1}: {'.' * pasos}")
+
+#     else:
+#         print(f"Turno de {caracol2}")
+#         pasos = random.randint(1, 6)
+#         pasos2 += pasos
+#         pasos2 = min(30, pasos2)  
+#         print(f"{caracol2} avanzó {pasos2} pasos")
+#         print(f"Pasos de {caracol2}: {'.' * pasos}")
+
+#     turno += 1
+#     time.sleep(1)
+
+# if pasos1 >= 30:
+#     print(f"Gano {caracol1}")
+# else:
+#     print(f"Gano {caracol2}")
+
+# ---------------------------------------------------------------#
+
+# # 🐉 BATALLA DE DRAGONES 🐉
+# # Pide el nombre de dos dragones.❤️
+# # Cada dragón tiene 80 puntos de vida (HP).
+# # En cada turno, el dragón ataca al otro con una llamarada de entre 10 y 18 de daño (random.randint()).
+# # Existe un 30% de probabilidad de llamarada crítica que hace el triple de daño.
+# # El juego alterna turnos hasta que un dragón quede con 0 o menos HP.
+# # Muestra en cada turno:
+# # Quién atacó a quién
+# # Si el ataque fue crítico
+# # Cuánto daño se hizo
+# # La barra de vida de ambos ("🔥" * (hp // 4)).        
+
+import random 
+import time 
+
+turno = random.randint(1,2)
+
+hp1 = 80
+hp2 = 80
+print("Bienvenido a la pelea de dragones")
+dragon1 = input("Nombre de tu dragon: ")
+dragon2 = input("Nombre del dragon rival: ")
+
+while hp1 > 0 and hp2 > 0:
+    if turno % 2 == 0:
+        print(f"Comneza {dragon1}")
+        atk = random.randint(10,18)
+        critico = random.randint(1,5)
+        if critico == 3:
+            atk *3
+            print("Critico! Llamaradaaaa!!")
+        hp2 -= atk
+        hp2 = max(0, hp2)
+        print(f"{dragon1} hizo {atk} a {dragon2}")
+        print(f"La vida de {dragon2}: {'❤️'*hp2}")
+    else:
+        print(f"Comneza {dragon2}")
+        atk = random.randint(10,18)
+        critico = random.randint(1,5)
+        if critico == 3:
+            atk *3
+            print("Critico! Llamaradaaaa!!")
+        hp1 -= atk
+        hp1 = max(0, hp1)
+        print(f"{dragon2} hizo {atk} a {dragon1}")
+        print(f"La vida de {dragon1}: {'❤️'*hp1}")
+    
+    turno += 1
+    time.sleep(1)
+    
+    if hp1 > hp2:
+        print(f"Gano {dragon1}")
+    else:
+        print(f"Gano {dragon2}")
         
         
-        
-            
-
-
-
 
 
