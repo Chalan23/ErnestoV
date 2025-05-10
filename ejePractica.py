@@ -187,199 +187,41 @@
 
 # -------------------------------------------------------------------------------------------------
 
-# # N°1 ejercicios para la prueba (Cine)
-# # pida al usuario selecionar categoria de sala del cine 
-# # selecione una categoria de pelicula 
-# # seleccionar pelicula 
-# # preguntar si quiere llevar promocion de cabritas 
-# # preguntar cuantas entradas desea llevar 
-# print("Bienvenido al cine")
-# print("Selecciona una categoria de sala de cine")
-# print("1.-Sala Normal")
-# print("2.-Sala 3D")
-# print("3.-Sala Pro")
+# # crear un programa que pida la cantidad de ramos 
+# # luego pida el promedio por cada materia 
+# # basado en su promedio final, aplique puntaje de beneficios
+# # 4.5 y 5 : 300, 5.1 y 6 : 500, 6.1  y 7.: 800
+# # agregar puntaje segun carrera 
+# # tecnico: +60, ingeneria: +40, diplomado: +20
 
-# sala = int(input("En que sala te gustaria disfrutar tu pelicula: "))
-
-# print("Seleciona el numero la categoria de la pelicula que quieres ver")
-# print("1.Terror")
-# print("2.-Accion")
-# print("3.-Comedia")
-
-# catPelicula = int(input("Que genero de peliculas desea ver hoy: "))
-# pelicula = ""
-
-# if catPelicula == 1:
-#     print("Peliculas de terror")
-#     print("1.-It el payaso")
-#     print("2.-La monja")
-#     print("3.-El diablo en la tierra")
-#     peli = int(input("Selecione una pelicula: "))
-#     if peli == 1:
-#         pelicula = "It el payaso"
-#     elif peli == 2:
-#         pelicula = "La monja"
-#     elif peli == 3:
-#         pelicula = "El diablo en la tierra"
-#     else:
-#         print("Opcion Invalida")
- 
-# elif catPelicula == 2:
-#     print("Peliculas de accion")
-#     print("1.-Rapidos y furiosos 23")
-#     print("2.-El ultimo soldado")
-#     print("3.-La pareja explosiva")
-#     peli = int(input("Selecione una pelicula: "))
-#     if peli == 1:
-#         pelicula = "Rapidos y furiosos 23"
-#     elif peli == 2:
-#         pelicula = "El ultimo soldado"
-#     elif peli == 3:
-#         pelicula = "La pareja explosiva"
-#     else:
-#         print("Opcion Invalida") 
-        
-# elif catPelicula == 3:
-#     print("Peliculas de comedia")
-#     print("1.-Los corredores de la risa")
-#     print("2.-El payaso fome")
-#     print("3.-El mimo parlanchin")
-#     peli = int(input("Selecione una pelicula: "))
-#     if peli == 1:
-#         pelicula = "Los corredores de la risa"
-#     elif peli == 2:
-#         pelicula = "El payaso fome"
-#     elif peli == 3:
-#         pelicula = "El mimo parlanchin"
-#     else:
-#         print("Opcion Invalida")    
-
+# cantRamos = int(input("Ingrese la cantidad de ramos: "))
+# suma = 0
+# for i in range(cantRamos):
+#     notaRamos = float(input(f"Ingrese la nota del ramo {i+1}: "))
+#     suma+=notaRamos
+# promedio = suma/cantRamos
+# print("Su promedio final es ",round(promedio,1))
+# if promedio >= 4.5 and promedio <= 5.0:
+#     puntaje = 300
+#     print(f"Su puntaje de beneficios es de: {puntaje}")
+# elif promedio >= 5.1 and promedio <= 6.0:
+#     puntaje = 500 
+#     print(f"Su puntaje de beneficios es de {puntaje}")
+# elif promedio >= 6.1 and promedio <= 7.0:
+#     puntaje = 800 
+#     print(f"Su puntaje de beneficios es de {puntaje}")
 # else:
-#         print("Opcion invalida")
+#     print("Lo sentimos no tiene beneficios es muy pete!")
 
-# promo = input("Deseas llevar cabritas Si/No: ").lower()
 
-# entradas = int(input("Cuantas entradas deseas llevar (cantidad de entradas en numero): "))
-
-# print("#---------------------------------------#")
-
-# print(f"Pelicula seleccionada: {pelicula}")
-# print(f"Llevas tu promo: {promo}")
-# print(f"Total entradas: {entradas}")
-
-# -------------------------------------------------------------------------------------------------
-
-# # N°2 ejercicios para la prueba (Concierto)
-# # el usuario cuenta con descuentos por comprar su entrada con tarjetas 
-# # banco bci 30%, banco de chile 20%, banco falabella 25%
-# # cancha $100.000, galeria $150.000, vip 250.000 (Recargo por entrada $20.000) 
-# # preguntar cuantas entradas desea comprar
-# # y seleccionar con que banco va a pagar
-# print("Crear usuario")
-# user = input("Ingresa tu nombre: ").lower()
-# clave = int(input("Ingresa tu clave (número): "))
-
-# print("!-----------------------------------------!")
-# print("Inicia sesión")
-
-# usuario = input("Ingresa tu nombre: ").lower()
-# contraseña = int(input("Ingresa tu clave: "))
-
-# while usuario != user or contraseña != clave:
-#     print("Nombre de usuario o clave incorrectos. Intenta de nuevo.")
-#     usuario = input("Ingresa tu nombre: ").lower()
-#     contraseña = int(input("Ingresa tu clave: "))
-
-# print("¡Inicio de sesión exitoso!")
-
+# print("1.-Tecnico - 2.-Ingeneria - 3.-Diplomado")    
+# carrera = int(input("Elije tu grado: "))
+# if carrera == 1:
+#     puntaje += 60
+# elif carrera == 2:
+#     puntaje += 40
+# elif carrera == 3:
+#     puntaje += 20
     
-
-# print("Bienvenido al sistema de compra de entradas")
-# print("!-----------------------------------------!")
-# entradas = int(input("Cuantas entradas deseas comprar: "))
-
-# print("PROMOCION DESCUENTO PAGO CON TARJETA")
-# print("1.-BCI 30% - 2.-Banco de Chile 20% - 3.-Banco Falabella 25%")
-# banco = int(input("Elije el banco con el que pagas: "))
-
-# print("Elige tu sector de preferencia")
-# print("1.-Cancha $100.000")
-# print("2.-Galeria $150.000")
-# print("3.-Vip $250.000")
-# print("Recuerda el recargo por servicio es de $20.000")
-
-# sector = int(input("En que sector quieres estar (1, 2 o 3): "))
-
-# if sector == 1:
-#     precioSector = 100000 
-# elif sector== 2:
-#     precioSector = 150000 
-# elif sector == 3:
-#     precioSector = 250000
-# else:
-#     print("Opcion invalida")
-#     exit()
-    
-# precioEntradas = precioSector +20000
-# precioTotal = entradas * precioEntradas
-
-
-# if banco == 1:
-#     desc = precioTotal * 0.3
-# elif banco == 2:
-#     desc = precioTotal * 0.2
-# elif banco == 3:
-#     desc = precioTotal * 0.25
-# else:
-#     print("opcion invalida")
-#     exit()
-    
-# precioFinal = precioTotal - desc    
-
-# print("!-----------------------------------------!")
-# print(f"Usted lleva {entradas} entradas")
-# print(f"El descuento total es de ${desc}")
-# print(f"El total a pagar es de ${precioFinal}")
-# print("!-----------------------------------------!")
-
-
-# -------------------------------------------------------------------------------------------------
-
-# crear un programa que pida la cantidad de ramos 
-# luego pida el promedio por cada materia 
-# basado en su promedio final, aplique puntaje de beneficios
-# 4.5 y 5 : 300, 5.1 y 6 : 500, 6.1  y 7.: 800
-# agregar puntaje segun carrera 
-# tecnico: +60, ingeneria: +40, diplomado: +20
-
-cantRamos = int(input("Ingrese la cantidad de ramos: "))
-suma = 0
-for i in range(cantRamos):
-    notaRamos = float(input(f"Ingrese la nota del ramo {i+1}: "))
-    suma+=notaRamos
-promedio = suma/cantRamos
-print("Su promedio final es ",round(promedio,1))
-if promedio >= 4.5 and promedio <= 5.0:
-    puntaje = 300
-    print(f"Su puntaje de beneficios es de: {puntaje}")
-elif promedio >= 5.1 and promedio <= 6.0:
-    puntaje = 500 
-    print(f"Su puntaje de beneficios es de {puntaje}")
-elif promedio >= 6.1 and promedio <= 7.0:
-    puntaje = 800 
-    print(f"Su puntaje de beneficios es de {puntaje}")
-else:
-    print("Lo sentimos no tiene beneficios es muy pete!")
-
-
-print("1.-Tecnico - 2.-Ingeneria - 3.-Diplomado")    
-carrera = int(input("Elije tu grado: "))
-if carrera == 1:
-    puntaje += 60
-elif carrera == 2:
-    puntaje += 40
-elif carrera == 3:
-    puntaje += 20
-    
-print(f"Su puntaje total es de {puntaje}")
+# print(f"Su puntaje total es de {puntaje}")
 
