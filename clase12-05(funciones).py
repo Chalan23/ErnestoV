@@ -77,7 +77,14 @@ def calcu():
             case 5:
                 print("Salir")
                 break         
-calcu()         
+calcu()  
+
+
+# tarea 
+# realizar un programa que realice mach y llame a otras 
+# 3 funciones. Estas funciones deben incluir 
+# if elif else, for y/o while 
+# el programa debe ser recursivo   
             
             
             
