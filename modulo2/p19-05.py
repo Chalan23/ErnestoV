@@ -89,25 +89,65 @@
 #     print("Esto solo acepta numeros")
 
 
-#ejercicio profe 
+# #ejercicio profe 
 
-rojos = int(input("Ingrese la cantidad de rojos: "))
-talleres = 4
-tDecimas = 0
+# rojos = int(input("Ingrese la cantidad de rojos: "))
+# talleres = 4
+# tDecimas = 0
 
-for r in range(rojos):
-    for t in range(talleres):
-        asist=input(f"Asistio al taller {t+1}? Si / No: " )
-        if asist.lower() == "Si":
-            tDecimas += 0.3
-    if tDecimas >= 1:
-        print("Bendecido por el profe")
-    else:
-        print("No bendecido por el profe")
-    nf=float(input("Ingrese la nota final: "))
-    nf += tDecimas
-    print(f"Su nota final es de {nf}")
-    if nf >= 4:
-        print("Aprobado")
-    else:
-        print("Reprobado")
+# for r in range(rojos):
+#     for t in range(talleres):
+#         asist=input(f"Asistio al taller {t+1}? Si / No: " )
+#         if asist.lower() == "Si":
+#             tDecimas += 0.3
+#     if tDecimas >= 1:
+#         print("Bendecido por el profe")
+#     else:
+#         print("No bendecido por el profe")
+#     nf=float(input("Ingrese la nota final: "))
+#     nf += tDecimas
+#     print(f"Su nota final es de {nf}")
+#     if nf >= 4:
+#         print("Aprobado")
+#     else:
+#         print("Reprobado")
+
+
+# lavado de autos 
+# crear un menu para lavar autos
+# 1.- Cursar pago del lavado
+# 2.- Ver ventas diarias
+# 3.- Salir
+# El lavado tiene tres niveles
+# 1.- full $15.000, 2- standard 10.000, 3- basico $7.000
+# al mostrar ventas diarias, debe mostrar la
+# cantidad de autos lavados y montos total recaudado
+# tambien debe mostrar el monto mas alto pagado
+
+# print("Bienvenido al lavado de autos")
+# print('''
+#         1.-Pago del lavado
+#         2.-Ver sus ventas diarias
+#         3.-Salir''')
+# op = int(input("Ingrese una opcion: "))
+# if op == 1:
+#     print("Pagondo su lavado")
+#     print('''
+#           1.-Full $15.000
+#           2.-Standard $10.000
+#           3.-Basico $7.000''')
+#     opLavado = int(input("Que tipo de lavado desea?: "))
+
+# elif op == 2:
+#     print("Revisar ventas diasrias")
+
+# elif op == 3:
+#     print("Saliendo del programa")
+# else:
+#     print("Opcion no valida")
+
+
+
+
+
+  
