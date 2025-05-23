@@ -123,31 +123,67 @@
 # al mostrar ventas diarias, debe mostrar la
 # cantidad de autos lavados y montos total recaudado
 # tambien debe mostrar el monto mas alto pagado
+# notas: usar try 
 
-# print("Bienvenido al lavado de autos")
-# print('''
-#         1.-Pago del lavado
-#         2.-Ver sus ventas diarias
-#         3.-Salir''')
-# op = int(input("Ingrese una opcion: "))
-# if op == 1:
-#     print("Pagondo su lavado")
-#     print('''
-#           1.-Full $15.000
-#           2.-Standard $10.000
-#           3.-Basico $7.000''')
-#     opLavado = int(input("Que tipo de lavado desea?: "))
+ventas_totales = 0
+autos_lavados = 0
+monto_mas_alto = 0
 
-# elif op == 2:
-#     print("Revisar ventas diasrias")
+while True:
+    print("Bienvenido al lavado de autos")
+    print('''
+    1.- Cursar pago del lavado
+    2.- Ver ventas diarias
+    3.- Salir''')
+    
+    try:
+        op = int(input("Ingrese una opción: "))
+    except ValueError:
+        print("Error: Ingrese un número válido.")
+        continue
+    
+    if op == 1:
+        print("Elija el tipo de lavado:")
+        print('''
+        1.- Full     $15.000
+        2.- Standard $10.000
+        3.- Básico   $7.000''')
+        
+        try:
+            opLavado = int(input("¿Qué tipo de lavado desea?: "))
+        except ValueError:
+            print("Error: Ingrese un número válido para el tipo de lavado.")
+            continue
 
-# elif op == 3:
-#     print("Saliendo del programa")
-# else:
-#     print("Opcion no valida")
+        if opLavado == 1:
+            print("Lavado Full seleccionado")
+            total = 15000
+        elif opLavado == 2:
+            print("Lavado Standard seleccionado")
+            total = 10000
+        elif opLavado == 3:
+            print("Lavado Básico seleccionado")
+            total = 7000
+        else:
+            print("Opción de lavado no válida.")
+            continue  
 
+        autos_lavados += 1
+        ventas_totales += total
+        if total > monto_mas_alto:
+            monto_mas_alto = total
+        
+        print(f"Pago realizado: ${total}")
 
+    elif op == 2:
+        print("\n--- Ventas Diarias ---")
+        print(f"Autos lavados: {autos_lavados}")
+        print(f"Total recaudado: ${ventas_totales}")
+        print(f"Monto más alto pagado: ${monto_mas_alto}")
+        
+    elif op == 3:
+        print("Gracias por usar el sistema. ¡Hasta luego!")
+        break
+    else:
+        print("Opción no válida. Intente nuevamente.")
 
-
-
-  
