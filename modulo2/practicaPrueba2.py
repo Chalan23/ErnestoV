@@ -362,167 +362,167 @@
     
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# menu = """
-# Menu principal
-# 1.- Pago tarjeta de credito
-# 2.- Simulacion de compras
-# 3.-Salir
-# """
-# total = 0
-# deuda = 100000
+menu = """
+Menu principal
+1.- Pago tarjeta de credito
+2.- Simulacion de compras
+3.-Salir
+"""
+total = 0
+deuda = 100000
 
-# while True:
-#     print(menu)
-#     try:
-#         opcion =int(input("Selecione una opcion: "))
+while True:
+    print(menu)
+    try:
+        opcion =int(input("Selecione una opcion: "))
         
-#         match opcion:
-#             case 1:
-#                 print("---Pago de tarjeta de credito---")
-#                 try:
-#                     montoPago = int(input("Ingrese el monto a pagar: "))
-#                     if montoPago <= 0:
-#                         print("Error el monto debe ser mayor a 0")
-#                     elif montoPago > deuda:
-#                         print("Error el monto no puede ser mayor a la deuda")
-#                     else:
-#                         deuda -= montoPago
-#                         print(f"Pago realizado, su deuda es de {deuda}")
-#                 except ValueError:
-#                     print("Error, debe ingresar un número")
-#             case 2:
-#                 print("---Simulacion de compras---")
-#                 compra = [] 
+        match opcion:
+            case 1:
+                print("---Pago de tarjeta de credito---")
+                try:
+                    montoPago = int(input("Ingrese el monto a pagar: "))
+                    if montoPago <= 0:
+                        print("Error el monto debe ser mayor a 0")
+                    elif montoPago > deuda:
+                        print("Error el monto no puede ser mayor a la deuda")
+                    else:
+                        deuda -= montoPago
+                        print(f"Pago realizado, su deuda es de {deuda}")
+                except ValueError:
+                    print("Error, debe ingresar un número")
+            case 2:
+                print("---Simulacion de compras---")
+                compra = [] 
                 
-#                 while True:
-#                     try:
-#                         monto = int(input("Ingres el monto de la compra o 0 para salir: "))
+                while True:
+                    try:
+                        monto = int(input("Ingres el monto de la compra o 0 para salir: "))
                         
-#                         if monto < 0:
-#                             print("Error el monto no puede ser negativo")
-#                         elif monto == 0:
-#                             break
-#                         else:
-#                             total += monto
-#                     except ValueError:
-#                         print("Error, debe ingresar un número")
-#             case 3:
-#                 print("Saliendo del programa")
-#                 break
-#             case _:
-#                 print("Error, opcion no valida")
-#     except ValueError:
-#         print("Error, debe ingresar un número")
+                        if monto < 0:
+                            print("Error el monto no puede ser negativo")
+                        elif monto == 0:
+                            break
+                        else:
+                            total += monto
+                    except ValueError:
+                        print("Error, debe ingresar un número")
+            case 3:
+                print("Saliendo del programa")
+                break
+            case _:
+                print("Error, opcion no valida")
+    except ValueError:
+        print("Error, debe ingresar un número")
         
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-# crear menus con categirias 
+# # crear menus con categirias 
 
-cantArt=0
-total=0
+# cantArt=0
+# total=0
 
-while True:
-    while True:
-        try:
-            print("""
-                Seleccione una opcion
-                1.-Teclados
-                2.-Monitores 
-                3.-Audifonos
-                4.-Pagar
-                5.-Salir
-                """)
-            op = int(input())
-            break
-        except Exception:
-            print("Ingrese solo numeros enteros")
-    match op:
-        case 1:
-            while True:
-                print("""
-                      Selecionar una opcion
-                      1.-Teclado de manco $20.000
-                      2.-Teclado gamer $40.000
-                      3.-Teclado Normal y aburrido $8.000
-                      4.-Volver al menu principal
-                      """)
-                op=int(input())
-                match op:
-                    case 1:
-                        total+=20000
-                        cantArt+=1
-                    case 2:
-                        total+=40000
-                        cantArt+=1
-                    case 3:
-                        total+=8000
-                    case 4:
-                        break
-                    case _:
-                        print("Opcion invalida")
-                print(f"Articulo Agregado al carro, lleva {cantArt} en total")
-                print(f"El total parcial es ${total}")
-        case 2:
-            while True:
-                print("""
-                      Seleccione una opcion
-                    1.-Monitor Xth67cv $200.000
-                    2.-Monito3 Exa67jk92 $140.000
-                    3.-Monitor VGA $28.000
-                    4.-Volver al menu principal
-                      """)
-                op=int(input())
-                match op:
-                    case 1:
-                        total+=200000
-                        cantArt+=1
-                    case 2:
-                        total+=140000
-                        cantArt+=1
-                    case 3:
-                        total+=28000
-                    case 4:
-                        break
-                    case _:
-                        print("Opcion invalida")
-                print(f"Articulo Agregado al carro, lleva {cantArt} en total")
-                print(f"El total parcial es ${total}")
-        case 3:
-            while True:
-                print("""
-                      Seleccione una opcion
-                    1.-Audifonos JBL 720 $60.000
-                    2.-Audifonos gamer $140.000
-                    3.-Audifonos normal y aburrido $10.000
-                    4.-Volver al menu principal
-                      """)
-                op=int(input())
-                match op:
-                    case 1:
-                        total+=200000
-                        cantArt+=1
-                    case 2:
-                        total+=140000
-                        cantArt+=1
-                    case 3:
-                        total+=28000
-                    case 4:
-                        break
-                    case _:
-                        print("Opcion invalida")
-                print(f"Articulo Agregado al carro, lleva {cantArt} en total")
-                print(f"El total parcial es ${total}")
-        case 4:
-            print("-----------------------------------")
-            print(f"El total de articulos es {cantArt}")
-            print(f"El total neto es {total}")
-            print(f"El total + IVA es {total*1.19} ")
-            print("-----------------------------------")
-        case 5:
-            print("Saliendo...")
-            break
-        case _:
-            print("Opcion Invalida")
+# while True:
+#     while True:
+#         try:
+#             print("""
+#                 Seleccione una opcion
+#                 1.-Teclados
+#                 2.-Monitores 
+#                 3.-Audifonos
+#                 4.-Pagar
+#                 5.-Salir
+#                 """)
+#             op = int(input())
+#             break
+#         except Exception:
+#             print("Ingrese solo numeros enteros")
+#     match op:
+#         case 1:
+#             while True:
+#                 print("""
+#                       Selecionar una opcion
+#                       1.-Teclado de manco $20.000
+#                       2.-Teclado gamer $40.000
+#                       3.-Teclado Normal y aburrido $8.000
+#                       4.-Volver al menu principal
+#                       """)
+#                 op=int(input())
+#                 match op:
+#                     case 1:
+#                         total+=20000
+#                         cantArt+=1
+#                     case 2:
+#                         total+=40000
+#                         cantArt+=1
+#                     case 3:
+#                         total+=8000
+#                     case 4:
+#                         break
+#                     case _:
+#                         print("Opcion invalida")
+#                 print(f"Articulo Agregado al carro, lleva {cantArt} en total")
+#                 print(f"El total parcial es ${total}")
+#         case 2:
+#             while True:
+#                 print("""
+#                       Seleccione una opcion
+#                     1.-Monitor Xth67cv $200.000
+#                     2.-Monito3 Exa67jk92 $140.000
+#                     3.-Monitor VGA $28.000
+#                     4.-Volver al menu principal
+#                       """)
+#                 op=int(input())
+#                 match op:
+#                     case 1:
+#                         total+=200000
+#                         cantArt+=1
+#                     case 2:
+#                         total+=140000
+#                         cantArt+=1
+#                     case 3:
+#                         total+=28000
+#                     case 4:
+#                         break
+#                     case _:
+#                         print("Opcion invalida")
+#                 print(f"Articulo Agregado al carro, lleva {cantArt} en total")
+#                 print(f"El total parcial es ${total}")
+#         case 3:
+#             while True:
+#                 print("""
+#                       Seleccione una opcion
+#                     1.-Audifonos JBL 720 $60.000
+#                     2.-Audifonos gamer $140.000
+#                     3.-Audifonos normal y aburrido $10.000
+#                     4.-Volver al menu principal
+#                       """)
+#                 op=int(input())
+#                 match op:
+#                     case 1:
+#                         total+=200000
+#                         cantArt+=1
+#                     case 2:
+#                         total+=140000
+#                         cantArt+=1
+#                     case 3:
+#                         total+=28000
+#                     case 4:
+#                         break
+#                     case _:
+#                         print("Opcion invalida")
+#                 print(f"Articulo Agregado al carro, lleva {cantArt} en total")
+#                 print(f"El total parcial es ${total}")
+#         case 4:
+#             print("-----------------------------------")
+#             print(f"El total de articulos es {cantArt}")
+#             print(f"El total neto es {total}")
+#             print(f"El total + IVA es {total*1.19} ")
+#             print("-----------------------------------")
+#         case 5:
+#             print("Saliendo...")
+#             break
+#         case _:
+#             print("Opcion Invalida")
         
             
                         
