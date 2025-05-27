@@ -105,106 +105,92 @@
 # Instrucciones para el envío de la actividad
 # El representante del grupo deberá comprimir los programas y enviar al docente a través de
 # Mensajes de AVA, utilizando el siguiente formato para el nombre del archivo:
+# notas debe incluir while o for, tambien debe incluir match y try except exception 
+# y no debe incluir listas o tuplas ni def, debe ser un codigo simple 
 
 
-usuario1= None
-usuario2=None
-usuario3=None
-contrasena1= None
-contrasena2=None
-contrasena3= None
+usuario1 = None
+usuario2 = None
+usuario3 = None
+contrasena1 = None
+contrasena2 = None
+contrasena3 = None
 
 while True:
+    print("1. Iniciar sesión")
+    print("2. Registrar usuario")
+    print("3. Salir")
     try:
-        op = int(input("""
-Seleccione una opción:
-1.- Iniciar sesión
-2.- Registrar usuario
-3.- Salir
-> """))
+        op = int(input("Opción: "))
     except Exception:
-        print("Error: debe ingresar un número válido.")
-        
+        print("Error: debe ingresar un número.")
+        continue
 
     match op:
         case 1:
-
-            if all(u is None for u in [usuario1, usuario2, usuario3]):
-                print("No hay usuarios registrados, por favor registre un usuario primero.")
-                
-
-            print("Iniciar sesión")
-            usuario = input("Ingrese nombre de usuario: ")
-            contrasena = input("Ingrese contraseña: ")
-
-
-            if (usuario == usuario1 and contrasena == contrasena1) or \
-               (usuario == usuario2 and contrasena == contrasena2) or \
-               (usuario == usuario3 and contrasena == contrasena3):
-                print("¡Sesión iniciada correctamente!")
-
+            if usuario1 is None and usuario2 is None and usuario3 is None:
+                print("Debe registrar un usuario primero.")
+                continue
+            usuario = input("Usuario: ")
+            contrasena = input("Contraseña: ")
+            if (usuario == usuario1 and contrasena == contrasena1) or (usuario == usuario2 and contrasena == contrasena2) or (usuario == usuario3 and contrasena == contrasena3):
+                print("Sesión iniciada")
                 while True:
+                    print("1. Realizar llamada")
+                    print("2. Enviar correo electrónico")
+                    print("3. Cerrar sesión")
                     try:
-                        op2 = int(input("""
-Menú de usuario:
-1) Realizar llamada
-2) Enviar correo electrónico
-3) Cerrar sesión
-> """))
+                        op2 = int(input("Opción: "))
                     except Exception:
-                        print("Error: debe ingresar un número válido.")
-                        
-
-                    if op2 == 1:
-                        numero = input("Ingrese número de celular (9 dígitos, comienza con 9): ")
-                        if len(numero) == 9 and numero.isdigit() and numero[0] == "9":
-                            print(f"Llamando al número {numero}...")
-                        else:
-                            print("Error: el número debe comenzar con 9 y tener 9 dígitos.")
-                    elif op2 == 2:
-                        while True:
-                            correo = input("Ingrese correo electrónico: ")
-                            tiene_arroba = False
-                            for c in correo:
-                                if c == "@":
-                                    tiene_arroba = True
-                                    break
-                            if tiene_arroba:
-                                break
+                        print("Error: debe ingresar un número.")
+                        continue
+                    match op2:
+                        case 1:
+                            num = input("Ingrese número celular: ")
+                            if len(num) == 9 and num[0] == "9" and num.isdigit():
+                                print("Llamando a", num)
                             else:
-                                print("Error: el correo debe contener '@'.")
-                        mensaje = input("Ingrese el mensaje a enviar: ")
-                        print(f"Correo enviado a {correo} con el mensaje: {mensaje}")
-                    elif op2 == 3:
-                        print("Cerrando sesión...")
-                        break
-                    else:
-                        print("Opción inválida, intente de nuevo.")
+                                print("Número inválido. Debe comenzar con 9 y tener 9 dígitos.")
+                        case 2:
+                            while True:
+                                correo = input("Ingrese correo: ")
+                                tiene_arroba = False
+                                for c in correo:
+                                    if c == "@":
+                                        tiene_arroba = True
+                                if tiene_arroba:
+                                    mensaje = input("Mensaje: ")
+                                    print("Correo enviado.")
+                                    break
+                                else:
+                                    print("Correo inválido, debe tener '@'.")
+                        case 3:
+                            print("Sesión cerrada.")
+                            break
+                        case _:
+                            print("Opción inválida.")
             else:
                 print("Usuario o contraseña incorrectos.")
-
         case 2:
-            print("Registrar usuario")
             if usuario1 is None:
-                usuario1 = input("Ingrese nombre de usuario1: ")
-                contrasena1 = input("Ingrese contraseña de usuario1: ")
-                print("Usuario 1 registrado correctamente.")
+                usuario1 = input("Nuevo usuario: ")
+                contrasena1 = input("Contraseña: ")
+                print("Usuario registrado.")
             elif usuario2 is None:
-                usuario2 = input("Ingrese nombre de usuario2: ")
-                contrasena2 = input("Ingrese contraseña de usuario2: ")
-                print("Usuario 2 registrado correctamente.")
+                usuario2 = input("Nuevo usuario: ")
+                contrasena2 = input("Contraseña: ")
+                print("Usuario registrado.")
             elif usuario3 is None:
-                usuario3 = input("Ingrese nombre de usuario3: ")
-                contrasena3 = input("Ingrese contraseña de usuario3: ")
-                print("Usuario 3 registrado correctamente.")
+                usuario3 = input("Nuevo usuario: ")
+                contrasena3 = input("Contraseña: ")
+                print("Usuario registrado.")
             else:
-                print("No hay espacio para más usuarios.")
-
+                print("Ya hay 3 usuarios.")
         case 3:
-            print("Saliendo del programa...")
+            print("Chao gracias.")
             break
         case _:
-            print("Opción inválida, intente de nuevo.")
+            print("Opción inválida.")
 
 
 
