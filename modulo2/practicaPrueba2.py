@@ -944,70 +944,133 @@
 
 # ----------------------------------------------------------------------------------------------
 
-# casa de apuestas!
-# un partdio de futbol 
-# el usuario apuesta por un equipo 
-# si pierde el equipo que aposto pierde su dinero 
-# si empata el equipo le devuelven el dinero
-# si gana el equipo gana el doble de dinero.
+# # casa de apuestas!
+# # un partdio de futbol 
+# # el usuario apuesta por un equipo 
+# # si pierde el equipo que aposto pierde su dinero 
+# # si empata el equipo le devuelven el dinero
+# # si gana el equipo gana el doble de dinero.
 
-import random
+# import random
 
 
-total_apostado = 0
-ganancia = 0
+# total_apostado = 0
+# ganancia = 0
+
+# while True:
+#     try:
+#         opcion = int(input("""
+# Bienvenido a la casa de apuestas!
+# 1.- Apostar
+# 2.- Ver ganancia o pérdida
+# 3.- Salir
+# Seleccione una opción: """))
+#         match opcion:
+#             case 1:
+#                 print("""
+# Por quién apuestas?
+# 1.- Colo-Colo
+# 2.- Barcelona
+# """)
+#                 equipo = int(input("Elige tu equipo (1 o 2): "))
+#                 if equipo != 1 and equipo != 2:
+#                     print("Opción de equipo no válida.")
+#                 monto = int(input("¿Cuánto quieres apostar? $"))
+#                 if monto <= 0:
+#                     print("El monto debe ser mayor a 0.")
+#                 total_apostado += monto
+#                 coloColo = random.randint(0, 5)
+#                 barcelona = random.randint(0, 5)
+#                 print(f"Resultado: Colo-Colo {coloColo} - {barcelona} Barcelona")
+#                 if coloColo > barcelona:
+#                     ganador = 1
+#                 elif barcelona > coloColo:
+#                     ganador = 2
+#                 else:
+#                     ganador = 0  
+
+#                 if ganador == equipo:
+#                     print("¡Ganaste! Tu equipo ganó, ganas el doble de tu apuesta.")
+#                     ganancia += monto * 2
+#                 elif ganador == 0:
+#                     print("Empate. Te devolvemos tu dinero.")
+#                     ganancia += monto  
+#                 else:
+#                     print("Perdiste. Tu equipo no ganó, pierdes tu dinero.")
+#             case 2:
+#                 print(f"Total apostado: ${total_apostado}")
+#                 print(f"Total recuperado (ganancia o devolución): ${ganancia}")
+#             case 3:
+#                 print("Gracias por jugar. ¡Hasta la próxima!")
+#                 break
+#             case _:
+#                 print("Opción no válida.")
+#     except Exception:
+#         print("Error, ingresa una opción válida.")
+                           
+# ---------------------------------------------------------------------------------------
+
+
+# # crear un menu de carrito con las siguientes opciones
+# # 1.- ingresar nombre del usuario 
+# # 2.- comprar, poner productos para comprar 
+# # con su precico correspondiente.
+# # 3.- sacar boleta, calcular el precio neto 
+# # y el precio mas IVA. Mostrar totales.
+# # 4.- salir 
+
+# # consideraciones:
+# # por lo menos 3 productos 
+# # no hay limite de compra 
+# # se puede salir en cualquier momento 
+# # los montos de los productos son fijos
+
+
+total = 0
+unidad = 0
+try:
+    nombre = input("Ingrese su nombre: ").lower()
+except Exception:
+    print("Debes Escribir tu nombre por favor")
+    
+
 
 while True:
     try:
-        opcion = int(input("""
-Bienvenido a la casa de apuestas!
-1.- Apostar
-2.- Ver ganancia o pérdida
-3.- Salir
-Seleccione una opción: """))
-        match opcion:
+        opciones = int(input("""
+                             Bienvenido al carrito de compra 
+                             1.-Leche $1.200 
+                             2.-Cereal $2.000
+                             3.-Jugo $1.000
+                             4.-Salir
+                             """))
+        match opciones:
             case 1:
-                print("""
-Por quién apuestas?
-1.- Colo-Colo
-2.- Barcelona
-""")
-                equipo = int(input("Elige tu equipo (1 o 2): "))
-                if equipo != 1 and equipo != 2:
-                    print("Opción de equipo no válida.")
-                monto = int(input("¿Cuánto quieres apostar? $"))
-                if monto <= 0:
-                    print("El monto debe ser mayor a 0.")
-                total_apostado += monto
-                coloColo = random.randint(0, 5)
-                barcelona = random.randint(0, 5)
-                print(f"Resultado: Colo-Colo {coloColo} - {barcelona} Barcelona")
-                if coloColo > barcelona:
-                    ganador = 1
-                elif barcelona > coloColo:
-                    ganador = 2
-                else:
-                    ganador = 0  
-
-                if ganador == equipo:
-                    print("¡Ganaste! Tu equipo ganó, ganas el doble de tu apuesta.")
-                    ganancia += monto * 2
-                elif ganador == 0:
-                    print("Empate. Te devolvemos tu dinero.")
-                    ganancia += monto  
-                else:
-                    print("Perdiste. Tu equipo no ganó, pierdes tu dinero.")
+                print("Compraste Leche")
+                total += 1200 
+                unidad += 1
             case 2:
-                print(f"Total apostado: ${total_apostado}")
-                print(f"Total recuperado (ganancia o devolución): ${ganancia}")
+                print("Compraste Cereal")
+                total += 2000 
+                unidad += 1
             case 3:
-                print("Gracias por jugar. ¡Hasta la próxima!")
+                print("Compraste Jugo")
+                total += 1000 
+                unidad += 1
+            case 4:
+                print("Saliendo...")
                 break
             case _:
-                print("Opción no válida.")
+                ("Error, seleciona una opcion valida")
     except Exception:
-        print("Error, ingresa una opción válida.")
-                
-            
-                
-        
+        print("Ingresa una opcion valida")
+
+
+print(f"""
+        $---Boleta---$
+Gracias {nombre} por preferirnos.
+Llevas {unidad} productos.
+El neto de tu compra es {total}
+El total + IVA es {total * 1.19}
+        Vuelve pronto!
+""")
