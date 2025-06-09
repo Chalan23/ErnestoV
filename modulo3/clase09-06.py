@@ -142,4 +142,5 @@ while True:
             precio = float(input("Ingrese el precio del producto: "))
             precios.append(precio)
         case 2:
+            
           
