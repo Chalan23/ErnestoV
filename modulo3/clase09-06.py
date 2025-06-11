@@ -117,53 +117,104 @@
 #             print("Error ingresa una opcion valida.")
             
 # -------------------------------------------------------------            
-# # seleccionar una opcion 
-# # 1.-agregar productos (Nombre producto y precio)
-# # 2.-comprar (Sub menu mostrando productos y precios)
-# # 3.-crear boleta
-# # 4.-salir
+# # # seleccionar una opcion 
+# # # 1.-agregar productos (Nombre producto y precio)
+# # # 2.-comprar (Sub menu mostrando productos y precios)
+# # # 3.-crear boleta
+# # # 4.-salir
 
-productos = ["disco SSD", "memoria Ram"]
-precios = [70000, 30000]
-carrito = []
+# productos = ["disco SSD", "memoria Ram"]
+# precios = [70000, 30000]
+# carrito = []
+
+# while True:
+#     print('''
+#         1.- Agregar Productos
+#         2.- Comprar
+#         3.- Crear Boleta
+#         4.- Salir
+#     ''')
+#     op = int(input("Ingrese una opción: "))
+
+#     match op:
+#         case 1:
+#             nom = input("Ingrese el producto: ")
+#             precio = int(input("Ingrese precio: "))
+#             productos.append(nom)
+#             precios.append(precio)
+#         case 2:
+#             print("Productos disponibles:")
+#             for i in range(len(productos)):
+#                 print(f"{i+1}.- {productos[i]} - ${precios[i]}")
+#             seleccion = int(input("Seleccione el número del producto a comprar: "))
+#             if 1 <= seleccion <= len(productos):
+#                 carrito.append(seleccion - 1)
+#                 print("Producto agregado al carrito.")
+#             else:
+#                 print("Selección fuera de rango.")
+#         case 3:
+#             if len(carrito) == 0:
+#                 print("El carrito está vacío.")
+#             else:
+#                 print("BOLETA:")
+#                 total = 0
+#                 for idx in carrito:
+#                     print(f"{productos[idx]} - ${precios[idx]}")
+#                     total += precios[idx]
+#                 print(f"Total a pagar: ${total}")
+#         case 4:
+#             print("Saliendo")
+#             break
+#         case _:
+#             print("Opción inválida")
+
+# -----------------------------------------------------------------------
+# ejercicio con el profe
+# seleccionar una opcion 
+# 1.-agregar productos (Nombre producto y precio)
+# 2.-comprar (Sub menu mostrando productos y precios)
+# 3.-crear boleta
+# 4.-salir
+
+productos=["Disco SSD 1TB", "Memoria Ram 8GB", "Mouse"]
+precios=[70000, 30000, 15000]
+carrito=[]
 
 while True:
     print('''
-        1.- Agregar Productos
+        1.- Ingresar productos a la tienda
         2.- Comprar
         3.- Crear Boleta
         4.- Salir
-    ''')
-    op = int(input("Ingrese una opción: "))
-
+          ''')
+    op=int(input("Ingese una opcion: "))
     match op:
         case 1:
-            nom = input("Ingrese el producto: ")
-            precio = int(input("Ingrese precio: "))
+            nom=input("Ingrese un Producto: ")
             productos.append(nom)
-            precios.append(precio)
+            ape=int(input("Ingrese un Precio: "))
+            precios.append(ape)
         case 2:
-            print("Productos disponibles:")
-            for i in range(len(productos)):
-                print(f"{i+1}.- {productos[i]} - ${precios[i]}")
-            seleccion = int(input("Seleccione el número del producto a comprar: "))
-            if 1 <= seleccion <= len(productos):
-                carrito.append(seleccion - 1)
-                print("Producto agregado al carrito.")
-            else:
-                print("Selección fuera de rango.")
+                for i in range(3):
+                    print(i+1, ".-", productos[i], "$", precios[i] )
+                pro=int(input("Selecione que quiere comprar: "))
+                carrito.append(pro-1)
+                print(carrito)
         case 3:
-            if len(carrito) == 0:
-                print("El carrito está vacío.")
-            else:
-                print("BOLETA:")
-                total = 0
-                for idx in carrito:
-                    print(f"{productos[idx]} - ${precios[idx]}")
-                    total += precios[idx]
-                print(f"Total a pagar: ${total}")
+            total=0
+            print("---------------0----------------")
+            print("Bienvenido a PC House ")
+            for i in carrito:
+                  print( productos[i], "----- $", precios[i] )
+                  total=total+precios[i]
+            print("Es total de articulos es", len(carrito))
+            print("Su total neto es ", total)
+            print("Su total mas iva es ", total*1.19)
+            print("---------------0----------------")
+
         case 4:
             print("Saliendo")
             break
         case _:
-            print("Opción inválida")
+            print("opcion invalida")
+
