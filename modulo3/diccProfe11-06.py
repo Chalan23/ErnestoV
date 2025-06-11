@@ -1,18 +1,18 @@
-dic = {"nombre":"Diego Robles",
-       "numero": 12345678,
-       "Casado": True
-       }
+# dic = {"nombre":"Diego Robles",
+#        "numero": 12345678,
+#        "Casado": True
+#        }
 
-dic["ciudad"]= "santiago"
+# dic["ciudad"]= "santiago"
 
-print(dic)
+# print(dic)
 
 # for key, value in dic.items():
 #     # print(key, value)
 #     print(dic["nombre"])
 
 # ------------------------------------------------------------------
-    
+
 # personas=[{"nombre":"jony bravo",
 #        "numero": 12345678,
 #        "Casado": True
@@ -31,5 +31,10 @@ print(dic)
 
 # -------------------------------------------------------------------
 
-# texto = input("Ingrese un texto")
-# palabra = input("Ingrese la palabra que desea buscar")
+texto = input("Ingrese un texto")
+palabra = input("Ingrese la palabra que desea buscar")
+productos = {
+       "manzana": 500,
+       "pera": 700,
+       "melon": 1000
+}
