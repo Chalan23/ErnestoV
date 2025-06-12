@@ -31,10 +31,10 @@
 
 # -------------------------------------------------------------------
 
-texto = input("Ingrese un texto")
-palabra = input("Ingrese la palabra que desea buscar")
-productos = {
-       "manzana": 500,
-       "pera": 700,
-       "melon": 1000
-}
+# texto = input("Ingrese un texto")
+# palabra = input("Ingrese la palabra que desea buscar")
+# productos = {
+#        "manzana": 500,
+#        "pera": 700,
+#        "melon": 1000
+# }
