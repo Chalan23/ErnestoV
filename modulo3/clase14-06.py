@@ -39,10 +39,10 @@
 #     "estuche":500,
 #     "plumon":1000
 # }
-
-# print(productos)
-# productos["corrector"]=2000
-# print(productos)
+# # agregar productos
+# # print(productos)
+# # productos["corrector"]=2000
+# # print(productos)
 
 # while True:
 #     try:
@@ -92,15 +92,48 @@
 # el diccionario debe de estar previamente escrito
 # antes de iniciar el sistema
 
-# # ej:
-# listadiUsuario=[
-#     {"usuario": "pipe", "pass": 3344},
-#     {},
-#     {}
-# ]
+usuarios = {
+    "ernesto": 2323,
+    "ronaldo": 1111,
+    "messi": 2222
+}
 
-# usuario={
-#     "pipe": 3344,
-#     "lola": 6655
-# }
+while True:
+    try:
+        print("""
+              1.-Consulta usuarios 
+              2.-Ingresar al sistema (iniciar sesion)
+              3.-Salir
+              """)
+        opcion = int(input("Ingresa una opcion: "))
+        match opcion: 
+            case 1:
+                print("Usuarios regitrados:")
+                for nombre in usuarios.keys():
+                    print(f"- {nombre}")
+            case 2:
+                usuario = input("Ingrese su nombre de usuario: ")
+                if usuario in usuarios:
+                    intentos = 0
+                    maxIntentos = 3
+                    while intentos < maxIntentos:
+                        clave = int(input("Ingrese su contraseña: "))
+                        if clave == usuarios[usuario]:
+                            print("Acceso correcto. Bienvenido!")
+                            break
+                        else:
+                            intentos += 1 
+                            print(f"Contraseña incorrecta. Intentos restantes: {maxIntentos - intentos}")
+                    if intentos == maxIntentos:
+                        print("Acceso bloqueado. Demasiados intentos fallidos.")
+                    else:
+                        print("Usuario no encontrado")
+            case 3:
+                print("Saliendo del sistema")
+                break
+            case _:
+                print ("opcion no valida")
+    except Exception:
+        print("Por favor, ingresa un numero valido")
+
 
