@@ -148,7 +148,8 @@ while True:
         1.-Agregar productos
         2.-Mostrar productos
         3.-Actualizar productos
-        4.-Salir  
+        4.-Borrar productos
+        5.-Salir  
 """)
     op=int(input("Seleccionar una opcion: "))
     match op:
@@ -172,6 +173,8 @@ while True:
             ListProd[op-1]["nombre"]=nn
             ListProd[op-1]["precio"]=np
             print("Articulos actualizados")
+        case 4:
+            print("Saliendo...")
         case 4:
             print("Saliendo...")
             break
