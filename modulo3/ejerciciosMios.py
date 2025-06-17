@@ -69,3 +69,101 @@
 # print(lista)
 
 # ------------------------------------------------------------------------------------
+# usar listas, diccionarios, funciones.
+# 1.-Buscar productos
+# 2.-Agregar productos
+# 3.-Mostrar inventario
+# 4.-Actualizar productos
+# 5.-Salir  
+
+
+inventario = [
+    {"nombre":"chocolate","stock":20},
+    {"nombre":"lentes","stock":15},
+    {"nombre":"pilas","stock":10}
+]
+
+def buscarProductos(nombre):
+    for producto in inventario:
+        if producto["nombre"] == nombre:
+            return producto
+    return None
+
+def agregarProductos():
+    nombre = input("Ingrese el nombre del producto: ").lower()
+    cantidad = int(input("Ingrese la cantidad: "))
+    producto = buscarProductos(nombre)
+    if producto:
+        producto["stock"] += cantidad
+        print(f"Se agregaron {cantidad} unidades a {nombre}")
+    else:
+        inventario.append({"nombre": nombre, "stock": cantidad})
+        print(f"Producto {nombre} agregado con {cantidad} unidades.")
+
+def mostrarInventario():
+    print("Inventario actual:")
+    for i, producto in enumerate(inventario, 1):
+        print(f"{i}. {producto['nombre']} - {producto['stock']} unidades")
+    print()
+
+def actualizarProductos():
+    nombre = input("Ingrese nombre del producto a actualizar: ").lower()
+    producto = buscarProductos(nombre)
+    if producto:
+        nuevoStock = int(input(f"Ingrese el nuevo stock para {nombre}: "))
+        producto["stock"] = nuevoStock
+        print(f"Stock de {nombre} actualiza a {nuevoStock}")
+    else:
+        print("Producto no encontrado")
+        
+def eliminarProducto():
+    nombre = input("Ingrese el nombre del producto que desea eliminar")
+    producto = buscarProductos(nombre)
+    if producto:
+        inventario.remove(producto)
+        print(f"El producto {nombre} se elimino del inventario.")
+    else:
+        print("Producto no encontrado")
+while True:
+    try:
+        print("""
+                Menu de inventario.
+                1.-Buscar productos
+                2.-Agregar productos
+                3.-Mostrar inventario
+                4.-Actualizar productos
+                5.-Eliminar productos
+                6.-Salir
+              """)
+        opcion = int(input("Ingresa una opcion: "))
+        
+        match opcion:
+            
+            case 1:
+                nombre = input("Ingrese el nombre del producto a buscar: ").lower()
+                producto = buscarProductos(nombre)
+                if producto:
+                    print(f"Producto encontrado: {producto['nombre']} - {producto['stock']} unidades")
+                else:
+                    print("Producto no encontrado")
+            
+            case 2:
+                agregarProductos()
+                
+            case 3:
+                mostrarInventario()
+            
+            case 4:
+                actualizarProductos()
+                
+            case 5:
+                eliminarProducto()
+            
+            case 6:
+                print("Saliendo del programa!")
+                break
+            
+            case _:
+                print("Opcion no valida.")
+    except Exception:
+        print("Error, ingresa un numero valido.")
