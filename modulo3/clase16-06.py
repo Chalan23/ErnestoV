@@ -135,58 +135,58 @@
 
 # # ej: profe
 
-# ListProd=[
-#     {"nombre":"zapato", "precio":20000},
-#     {"nombre":"pelota", "precio":24000}
-# ]
+# print(ListProd[0]["nombre"])
+# print(ListProd)
+# ListProd.append({"nombre":"paleta", "precio":14000})
 
-# # print(ListProd[0]["nombre"])
-# # print(ListProd)
-# # ListProd.append({"nombre":"paleta", "precio":14000})
+ListProd=[
+    {"nombre":"zapato", "precio":20000},
+    {"nombre":"pelota", "precio":24000}
+]
 
-# while True:
-#     print("""
-#         1.-Agregar productos
-#         2.-Mostrar productos
-#         3.-Actualizar productos
-#         4.-Borrar productos
-#         5.-Salir  
-# """)
-#     op=int(input("Seleccionar una opcion: "))
-#     match op:
-#         case 1:
-#             nom=input("Ingrese el numbre del producto: ")
-#             pre=int(input("Ingrese el precio: "))
-#             ListProd.insert(0,{"nombre":nom, "precio":pre})
-#         case 2:
-#             for p in ListProd:
-#                 print(p)
-#         case 3:
-#             # for n, p in enumerate(ListProd): #ejemplo 1
-#             #     print(n+1, ".-", p)
-#             for i in range(len(ListProd)): #ejemplo 2
-#                 print(i+1, ".-", ListProd[i])
-#             op=int(input("Seleccionar una opcion: "))   
-#             print("Productos actualizados")
-#             print(ListProd[op-1])
-#             nn=input("Ingrese nuevo nombre: ")
-#             np=int(input("Ingrese nuevo precio: "))
-#             ListProd[op-1]["nombre"]=nn
-#             ListProd[op-1]["precio"]=np
-#         case 4:
-#             for i, p in enumerate(ListProd):
-#                 print(f"{i+1}.- {p}")
-#             idx = int(input("Ingrese el número del producto a borrar: "))
-#             if 1 <= idx <= len(ListProd):
-#                 eliminado = ListProd.pop(idx-1)
-#                 print(f"Producto eliminado: {eliminado}")
-#             else:
-#                 print("Número inválido")
-#         case 5:
-#             print("Saliendo...")
-#             break
-#         case _:
-#             print("Error, opcion invalida")
+while True:
+    print("""
+        1.-Agregar productos
+        2.-Mostrar productos
+        3.-Actualizar productos
+        4.-Borrar productos
+        5.-Salir  
+""")
+    op=int(input("Seleccionar una opcion: "))
+    match op:
+        case 1:
+            nom=input("Ingrese el numbre del producto: ")
+            pre=int(input("Ingrese el precio: "))
+            ListProd.insert(0,{"nombre":nom, "precio":pre})
+        case 2:
+            for p in ListProd:
+                print(p)
+        case 3:
+            # for n, p in enumerate(ListProd): #ejemplo 1
+            #     print(n+1, ".-", p)
+            for i in range(len(ListProd)): #ejemplo 2
+                print(i+1, ".-", ListProd[i])
+            op=int(input("Seleccionar una opcion: "))   
+            print("Productos actualizados")
+            print(ListProd[op-1])
+            nn=input("Ingrese nuevo nombre: ")
+            np=int(input("Ingrese nuevo precio: "))
+            ListProd[op-1]["nombre"]=nn
+            ListProd[op-1]["precio"]=np
+        case 4:
+            for i, p in enumerate(ListProd):
+                print(f"{i+1}.- {p}")
+            idx = int(input("Ingrese el número del producto a borrar: "))
+            if 1 <= idx <= len(ListProd):
+                eliminado = ListProd.pop(idx-1)
+                print(f"Producto eliminado: {eliminado}")
+            else:
+                print("Número inválido")
+        case 5:
+            print("Saliendo...")
+            break
+        case _:
+            print("Error, opcion invalida")
 
 # -------------------------------------------------------------------------------------
 
