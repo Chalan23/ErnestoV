@@ -72,70 +72,97 @@
 
 # ------------------------------------------------------------------------------------
 
-# crear programa del siguiente diccionario
+# # crear programa del siguiente diccionario
 
-personas={
-    1:{"nombre": "diego rivera",
-       "numeros": [12345678,87654321],
-       "estadoCivil": "casado",
-       "trabajando" : True,
-       "edad": 64},
-    2:{"nombre": "ernesto vilches",
-       "numeros": [12345678,87654321],
-       "estadoCivil": "soltero",
-       "trabajando" : False,
-       "edad": 32},
-    3:{"nombre": "cristiano ronaldo",
-       "numeros": [12345678,87654321],
-       "estadoCivil": "casado",
-       "trabajando" : True,
-       "edad": 35},
-}
+# personas={
+#     1:{"nombre": "diego rivera",
+#        "numeros": [12345678,87654321],
+#        "estadoCivil": "casado",
+#        "trabajando" : True,
+#        "edad": 64},
+#     2:{"nombre": "ernesto vilches",
+#        "numeros": [12345678,87654321],
+#        "estadoCivil": "soltero",
+#        "trabajando" : False,
+#        "edad": 32},
+#     3:{"nombre": "cristiano ronaldo",
+#        "numeros": [12345678,87654321],
+#        "estadoCivil": "casado",
+#        "trabajando" : True,
+#        "edad": 35},
+# }
 
-while True:
-    try:
-        print("""
-              1.-Ingresar persona
-              2.-consultar estado 
-              3.-Actualizar persona
-              4.-Borrar persona
-              5.-Salir
-              """)
-        op=int(input("seleccione una opcion"))
-        match op:
-            case 1:
-                nombre=input("ingrese el nombre")
-                numero=int(input("ingrese el numero"))
-                estado=int(input("Estado civil 1.-casado - 2.-soltero"))
-                if estado==1:
-                    estadoCivil="casado"
-                else:
-                    estadoCivil="soltero"
-                edad=int(input("ingrese el numero"))
-                netxkey = len(personas) + 1
-                personas[netxkey] = {
-                    "nombre": nombre,
-                    "numeros": [numero],
-                    "estadoCivil": estadoCivil,
-                    "trabajando": True,
-                    "edad": edad}
-            case 2:
-                for key, val in personas.items():
-                    print(key, val)
-            case 3:
-                
-                print()
-            case 4:
-                for personas, val in personas.items():
-                    print(personas, val)
-                dell=int(input("Seleccione cual desea borrar1: "))
-                dell=personas[dell]
-                print()
-            case 5:
-                print("Saliendo...")
-                break
-            case _:
-                print("Error, opcion invalida")
+# while True:
+#     try:
+#         print("""
+#               1.-Ingresar persona
+#               2.-consultar estado 
+#               3.-Actualizar persona
+#               4.-Borrar persona
+#               5.-Salir
+#               """)
+#         op=int(input("seleccione una opcion: "))
+#         match op:
+#             case 1:
+#                 nombre=input("ingrese el nombre: ")
+#                 numero=int(input("ingrese el numero: "))
+#                 estado=int(input("Estado civil 1.-casado - 2.-soltero: "))
+#                 if estado==1:
+#                     estadoCivil="casado"
+#                 else:
+#                     estadoCivil="soltero"
+#                 edad=int(input("ingrese su edad: "))
+#                 netxkey = len(personas) + 1
+#                 personas[netxkey] = {
+#                     "nombre": nombre,
+#                     "numeros": [numero],
+#                     "estadoCivil": estadoCivil,
+#                     "trabajando": True,
+#                     "edad": edad}
+#             case 2:
+#                 for key, val in personas.items():
+#                     print(key, val)
+#             case 3:
+#                 for key, val in personas.items():
+#                     print(key, val)
+#                 pide = int(input("Ingrese el ID de la persona que desea actualizar: "))
+#                 if pide in personas:
+#                     nombre = input("Nuevo nombre (dejar vacío para mantener): ")
+#                     numero = input("Nuevo número (dejar vacío para mantener): ")
+#                     estado = input("Nuevo estado civil (1.-casado / 2.-soltero / dejar vacío para mantener): ")
+#                     edad = input("Nueva edad (dejar vacío para mantener): ")
+#                     trabajando = input("¿Está trabajando? s/n) :").lower()
+#                     if nombre:
+#                         personas[pide]["nombre"] = nombre
+#                     if numero:
+#                         personas[pide]["numeros"] = [int(numero)]
+#                     if estado == "1":
+#                         personas[pide]["estadoCivil"] = "casado"
+#                     elif estado == "2":
+#                         personas[pide]["estadoCivil"] = "soltero"
+#                     if edad:
+#                         personas[pide]["edad"] = int(edad)
+#                     if trabajando == "s":
+#                         personas[pide]["trabajando"] = True
+#                     elif trabajando == "n":
+#                         personas[pide]["trabajando"] = False
+#                 else:
+#                     print("ID no encontrado.")
+#             case 4:
+#                 for key, val in personas.items():
+#                     print(key, val)
+#                 dell = int(input("Seleccione cual desea borrar: "))
+#                 if dell in personas:
+#                     del personas[dell]
+#                     print("Persona borrada")
+#                 else:
+#                     print("ID no encontrado")
+#             case 5:
+#                 print("Saliendo...")
+#                 break
+#             case _:
+#                 print("Error, opcion invalida")
 
-    except Exception as e:
-        print("error")
+#     except Exception as e:
+#         print("Error")
+
