@@ -26,11 +26,11 @@ vehiculos = {
         "año":"2025",
         "patente":"evch23",
         "tipo":"camioneta"},
-    1: {"marca": "suzuki",
+    2: {"marca": "suzuki",
         "año":"2020",
         "patente":"eevv11",
         "tipo":"moto"},
-    1: {"marca": "chevrolet",
+    3: {"marca": "chevrolet",
         "año":"2023",
         "patente":"cchh22",
         "tipo":"suv"}
@@ -54,22 +54,31 @@ def validar_pass(clave):
             numeros = True
     if mayuscula and minuscula and numeros and len(clave)==6:
         print("Esta bien escrito.")
-        return False
+        return True
     else:
         print("Esta mal escrito")
-        return False    
-
+        return False   
 def ingresar_vehiculo(dict):
-    marca = int(input("Ingrese la marca del vehiculo: "))
-    año = int(input("Ingrese el año del vehiculo: "))
-    patente = int(input("Ingrese la patente del vehiculo: "))
-    tipo = int(input("Ingrese el tipo de vehiculo: "))
+    marca = input("Ingrese la marca del vehiculo: ")
+    año = input("Ingrese el año del vehiculo: ")
+    patente = input("Ingrese la patente del vehiculo: ")
+    print("Seleccione el tipo de vehículo:")
+    print("  s - Sedan")
+    print("  c - Camioneta")
+    print("  m - Moto")
+    tipo = input("Ingrese el tipo (s/c/m): ").lower()
+    while tipo not in ['s', 'c', 'm']:
+        print("Tipo inválido. Debe ser 's', 'c' o 'm'.")
+        tipo = input("Ingrese el tipo (s/c/m): ").lower()
+    
     if validar_pass(patente):
-        largo = list(dict.keys()[-1])
-        dict[largo+1]={"marca":marca,}
-        dict[largo+1]={"año":año,}
-        dict[largo+1]={"patente":patente,}
-        dict[largo+1]={"tipo":tipo}
+        nuevo_id = max(dict.keys(), default=0) + 1
+        dict[nuevo_id] = {
+            "marca": marca,
+            "año": año,
+            "patente": patente,
+            "tipo": tipo
+        }
     else:
         print("Error, no cumple con el parametro")
         

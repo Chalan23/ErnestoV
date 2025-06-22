@@ -276,121 +276,97 @@
 
 # ----------------------------------------------------------------------------------------
 
-# hacer un carrito de compras con 3 productos y sus precios 
-# el menu debe tener:
-# 1.-Agregar producto al carrito
-# 2.-Ver carrito
-# 3.-Actualizar cantidad de un producto
-# 4.-Eliminar producto del carrito
-# 5.-Salir 
-# debe tener funciones, match case, while true, try, listas y diccionarios
+# lista de matrimonio 
+#   1.- Registrar una persona
+#   2.- Mostrar personas
+#   3.- Actualizar personas
+#   4.- Borrar personas
+#   5.- Salir
 
-productos = [
-    {"nombre": "manzana", "precio": 500},
-    {"nombre": "pan", "precio": 1000},
-    {"nombre": "leche", "precio": 1200}
-]
+personas = {
+    1: {"nombre": "ernesto", "edad": 32, "invitado": True},
+    2: {"nombre": "camila", "edad": 29, "invitado": True}
+}
 
-carrito = []
-
-def mostrar_productos():
-    print("Productos disponibles:")
-    for i, prod in enumerate(productos, 1):
-        print(f"{i}. {prod["nombre"]} - ${prod["precio"]}")
-    print()
-
-def agregar_al_carrito():
-    mostrar_productos()
-    try:
-        opcion = int(input("Seleccione el producto a agregar (numero): "))
-        if 1 <= opcion <= len(productos):
-            cantidad = int(input("Ingrese la cantidad: "))
-            nombre = productos[opcion-1]["nombre"]
-            precio = productos[opcion-1]["precio"]
-            for item in carrito:
-                if item["nombre"] == nombre:
-                    item["cantidad"] += cantidad
-                    print(f"Se agregaron {cantidad} {nombre}(s) al carrito.")
-                    return
-            carrito.append({"nombre": nombre, "precio": precio, "cantidad": cantidad})
-            print(f"{nombre} agregado al carrito.")
-        else:
-            print("Opcion invalida.")
-    except Exception:
-        print("Entrada invalida.")
-
-def ver_carrito():
-    if not carrito:
-        print("El carrito esta vacio.")
-        return
-    total = 0
-    print("Carrito de compras:")
-    for i, item in enumerate(carrito, 1):
-        subtotal = item["precio"] * item["cantidad"]
-        total += subtotal
-        print(f"{i}. {item['nombre']} - ${item['precio']} x {item['cantidad']} = ${subtotal}")
-    print(f"Total a pagar: ${total}")
-
-def actualizar_cantidad():
-    if not carrito:
-        print("El carrito esta vacio.")
-        return
-    ver_carrito()
-    try:
-        opcion = int(input("Seleccione el producto a actualizar (u): "))
-        if 1 <= opcion <= len(carrito):
-            nueva_cantidad = int(input("Ingrese la nueva cantidad: "))
-            if nueva_cantidad > 0:
-                carrito[opcion-1]["cantidad"] = nueva_cantidad
-                print("Cantidad actualizada.")
-            else:
-                print("Cantidad invalida.")
-        else:
-            print("o invalida.")
-    except Exception:
-        print("Entrada invalida.")
-
-def eliminar_producto():
-    if not carrito:
-        print("El carrito esta vacio.")
-        return
-    ver_carrito()
-    try:
-        opcion = int(input("Seleccione el producto a eliminar (u): "))
-        if 1 <= opcion <= len(carrito):
-            eliminado = carrito.pop(opcion-1)
-            print(f"{eliminado['nombre']} eliminado del carrito.")
-        else:
-            print("o invalida.")
-    except Exception:
-        print("Entrada invalida.")
+def mostrar_personas(personas):
+    for key, nombre in personas.items():
+        print(key, nombre)
+def valida_pass(clave):
+    mayuscula = False
+    minuscula = False
+    numero = False
+    for palabra in clave:
+        if palabra.isupper():
+            mayuscula = True
+        elif palabra.islower():
+            minuscula = True
+        elif palabra.isdigit():
+            numero = True
+    return mayuscula and minuscula and numero
+def ingresar_persona(personas):
+    nombre = input("Ingrese su nombre: ")
+    edad = int(input("Ingrese su edad: "))
+    invitado = input("¿Es invitado? (s/n): ").lower()
+    if invitado == 's':
+        invitado = True
+    else:
+        invitado = False
+    nextkey = len(personas) + 1
+    personas[nextkey] = {
+        "nombre": nombre,
+        "edad": edad,
+        "invitado": invitado
+    }
+def actualizar_persona(personas):
+    mostrar_personas(personas)
+    pide = int(input("Ingrese el ID de la persona que desea actualizar: "))
+    if pide in personas:
+        nombre = input("Nuevo nombre (o dejar vacio para mantener): ")
+        edad = input("Nueva edad (o dejar vacio para mantener): ")
+        invitado = input("¿Es invitado? (s/n) (o dejar vacio para mantener): ").lower()
+        if nombre:
+            personas[pide]["nombre"] = nombre
+        if edad:
+            personas[pide]["edad"] = int(edad)
+        if invitado == 's':
+            personas[pide]["invitado"] = True
+        elif invitado == 'n':
+            personas[pide]["invitado"] = False
+    else:
+        print("ID no encontrado")
+def borrar_persona(personas):
+    mostrar_personas(personas)
+    dell = int(input("Selecciona el ID de la persona que desea borrar: "))
+    if dell in personas:
+        del personas[dell]
+        print("Persona borrada")
+    else:
+        print("ID no encontrado")
 
 while True:
     try:
         print("""
-        Menu Carrito de Compras
-        1.-Agregar producto al carrito
-        2.-Ver carrito
-        3.-Actualizar cantidad de un producto
-        4.-Eliminar producto del carrito
-        5.-Salir
-        """)
-        op = int(input("Seleccione una opción: "))
-        match op:
+                1.- Registrar una persona
+                2.- Mostrar personas
+                3.- Actualizar personas
+                4.- Borrar personas
+                5.- Salir
+              """)
+        opcion = int(input("Seleciona una opcion: "))
+        match opcion:
             case 1:
-                agregar_al_carrito()
+                ingresar_persona(personas)
             case 2:
-                ver_carrito()
+                mostrar_personas(personas)
             case 3:
-                actualizar_cantidad()
+                actualizar_persona(personas)
             case 4:
-                eliminar_producto()
+                borrar_persona(personas)
             case 5:
-                print("¡Gracias por usar el carrito de compras!")
+                print("Saliendo...")
                 break
             case _:
-                print("o no válida.")
-    except Exception:
-        print("Error, ingrese un u válido.")
-
-
+                print("Error, seleciona una opcion valida.")
+    except Exception as e:
+        print("Error")
+                
