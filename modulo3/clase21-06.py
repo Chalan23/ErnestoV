@@ -202,7 +202,7 @@
 #         print("El error es:", e)
   
 #-------------------------------------------------------------------------------------------------------
-# ejercicio realizado por el profe.
+# # ejercicio realizado por el profe.
 perros={
     1:{"nombre": "Droopy",
        "raza": "Dog Hount",
@@ -211,16 +211,13 @@ perros={
        "raza": "Bultierrer",
        "codigo": "BDil77"}
 }
-# #                  -1
-# perros.keys() # [1, 4]
-# #                   
-# list(perros.keys())[-1]
 
 def mostrar_perros(dict):
     for key, perro in dict.items():
         print(key , perro)
+
 def valida_pass(clave):
-    Mayuscula=False
+    Mayuscula=False 
     Minuscula=False
     Numero=False
     for palabra in clave:
@@ -247,10 +244,10 @@ def ingrese_perro(dict):
                     "raza": raza,
                     "codigo": codigo}
     else:
-                    print("el paramatro de la clave no es correcto")
-                    print('''
-                    el codigo debe tener, una mayuscula, una minuscula, 
-                    un numero y un largo exacto de 6''')
+        print("el paramatro de la clave no es correcto")
+        print('''
+        el codigo debe tener, una mayuscula, una minuscula, 
+        un numero y un largo exacto de 6''')
 
 def act_perros(dict):
     mostrar_perros(dict)
@@ -307,31 +304,14 @@ while True:
             case 4 :
                 borrar_perros(perros)
             case 5:
+                print("Saliendo...")
                 break
             case _:
                     print("Opcion invalida")
     except Exception as e:
         print("EL error es: ", e)   
-        
-# """crear gestion de vehiculos 
-# crear programa para un parking de autos
-# se debe ingresar marca, año, patente y tipo
 
-# marca: mtipo string, se debe tipear la marca 
-# año: tipo int, solo de 4 digitos enteros
-# patente: debe tener 4 letras minusculas y dos numeros
-# tipo: s= sedan, c= camioneta, m= moto
 
-# se debe validar cada aspecto y tener un mantenedor para 
-# todos los vehiculos motorizados
 
-# 1.-Ingresa un vehiculo
-# 2.-Mostrar un Vehiculo
-# 3.-Actualizar Vehiculo
-# 4.-Borrar Vehiculo
-# 5.-Mostrar estadisticas: Ultimo vehiculo ingresado y total del estacionamiento
-# 6.-Salir
 
-# Usar dunciones con argumentos para poder validar
-# y para poder llamar las acciones dentro del menú
-# """
+
