@@ -283,90 +283,209 @@
 #   4.- Borrar personas
 #   5.- Salir
 
-personas = {
-    1: {"nombre": "ernesto", "edad": 32, "invitado": True},
-    2: {"nombre": "camila", "edad": 29, "invitado": True}
+# personas = {
+#     1: {"nombre": "ernesto", "edad": 32, "invitado": True},
+#     2: {"nombre": "camila", "edad": 29, "invitado": True}
+# }
+
+# def mostrar_personas(personas):
+#     for key, nombre in personas.items():
+#         print(key, nombre)
+# def valida_pass(clave):
+#     mayuscula = False
+#     minuscula = False
+#     numero = False
+#     for palabra in clave:
+#         if palabra.isupper():
+#             mayuscula = True
+#         elif palabra.islower():
+#             minuscula = True
+#         elif palabra.isdigit():
+#             numero = True
+#     return mayuscula and minuscula and numero
+# def ingresar_persona(personas):
+#     nombre = input("Ingrese su nombre: ")
+#     edad = int(input("Ingrese su edad: "))
+#     invitado = input("¿Es invitado? (s/n): ").lower()
+#     if invitado == 's':
+#         invitado = True
+#     else:
+#         invitado = False
+#     nextkey = len(personas) + 1
+#     personas[nextkey] = {
+#         "nombre": nombre,
+#         "edad": edad,
+#         "invitado": invitado
+#     }
+# def actualizar_persona(personas):
+#     mostrar_personas(personas)
+#     pide = int(input("Ingrese el ID de la persona que desea actualizar: "))
+#     if pide in personas:
+#         nombre = input("Nuevo nombre (o dejar vacio para mantener): ")
+#         edad = input("Nueva edad (o dejar vacio para mantener): ")
+#         invitado = input("¿Es invitado? (s/n) (o dejar vacio para mantener): ").lower()
+#         if nombre:
+#             personas[pide]["nombre"] = nombre
+#         if edad:
+#             personas[pide]["edad"] = int(edad)
+#         if invitado == 's':
+#             personas[pide]["invitado"] = True
+#         elif invitado == 'n':
+#             personas[pide]["invitado"] = False
+#     else:
+#         print("ID no encontrado")
+# def borrar_persona(personas):
+#     mostrar_personas(personas)
+#     dell = int(input("Selecciona el ID de la persona que desea borrar: "))
+#     if dell in personas:
+#         del personas[dell]
+#         print("Persona borrada")
+#     else:
+#         print("ID no encontrado")
+
+# while True:
+#     try:
+#         print("""
+#                 1.- Registrar una persona
+#                 2.- Mostrar personas
+#                 3.- Actualizar personas
+#                 4.- Borrar personas
+#                 5.- Salir
+#               """)
+#         opcion = int(input("Seleciona una opcion: "))
+#         match opcion:
+#             case 1:
+#                 ingresar_persona(personas)
+#             case 2:
+#                 mostrar_personas(personas)
+#             case 3:
+#                 actualizar_persona(personas)
+#             case 4:
+#                 borrar_persona(personas)
+#             case 5:
+#                 print("Saliendo...")
+#                 break
+#             case _:
+#                 print("Error, seleciona una opcion valida.")
+#     except Exception as e:
+#         print("Error")
+
+
+# -------------------------------------------------------------------------------------------
+
+# carrito de compras 
+# registrar un articulo 
+# muestra articulos
+# actualizar producto 
+# borrar producto
+# salir
+
+articulos = {
+    1:{"nombre":"leche",
+       "precio": 1000,
+       "codigo":"LLee10"},
+    2:{"nombre":"cereal",
+       "precio": 1500,
+       "codigo":"CCee15"},
+    3:{"nombre":"jugo",
+       "precio": 1200,
+       "codigo":"JJuu12"}
 }
 
-def mostrar_personas(personas):
-    for key, nombre in personas.items():
-        print(key, nombre)
-def valida_pass(clave):
-    mayuscula = False
-    minuscula = False
-    numero = False
-    for palabra in clave:
+def mostrar_productos(dict):
+    for key, articulos  in dict.items():
+        print(key, articulos)
+        
+def validar_code(codigo):
+    mayuscula=False
+    minuscula=False
+    numero=False
+    for palabra in codigo:
         if palabra.isupper():
-            mayuscula = True
-        elif palabra.islower():
-            minuscula = True
-        elif palabra.isdigit():
-            numero = True
-    return mayuscula and minuscula and numero
-def ingresar_persona(personas):
-    nombre = input("Ingrese su nombre: ")
-    edad = int(input("Ingrese su edad: "))
-    invitado = input("¿Es invitado? (s/n): ").lower()
-    if invitado == 's':
-        invitado = True
+            mayuscula=True
+        if palabra.islower():
+            minuscula=True
+        if palabra.isdigit():
+            numero=True
+    if mayuscula and minuscula and numero and len(codigo)==6:
+        print("El codigo esta bien ingresado")
+        return True
     else:
-        invitado = False
-    nextkey = len(personas) + 1
-    personas[nextkey] = {
-        "nombre": nombre,
-        "edad": edad,
-        "invitado": invitado
-    }
-def actualizar_persona(personas):
-    mostrar_personas(personas)
-    pide = int(input("Ingrese el ID de la persona que desea actualizar: "))
-    if pide in personas:
-        nombre = input("Nuevo nombre (o dejar vacio para mantener): ")
-        edad = input("Nueva edad (o dejar vacio para mantener): ")
-        invitado = input("¿Es invitado? (s/n) (o dejar vacio para mantener): ").lower()
-        if nombre:
-            personas[pide]["nombre"] = nombre
-        if edad:
-            personas[pide]["edad"] = int(edad)
-        if invitado == 's':
-            personas[pide]["invitado"] = True
-        elif invitado == 'n':
-            personas[pide]["invitado"] = False
+        print("El codigo esta mal escrito, debe tener al menos una mayuscula, minuscula y numero")
+        return False
+    
+def ingresar_articulo(dict):
+    nombre=input("Ingrese el nombre: ")
+    precio=input("Ingrese el precio: ")
+    codigo=input("Ingrese el codigo: ")
+    if validar_code(codigo):
+        largo=list(dict.keys())[-1]
+        dict[largo+1]={"nombre":nombre,
+                       "precio":precio,
+                       "codigo":codigo}
     else:
-        print("ID no encontrado")
-def borrar_persona(personas):
-    mostrar_personas(personas)
-    dell = int(input("Selecciona el ID de la persona que desea borrar: "))
-    if dell in personas:
-        del personas[dell]
-        print("Persona borrada")
-    else:
-        print("ID no encontrado")
+        print("El parametro del codigo no es correcto")
+    
+def actualizar_producto(dict):
+    mostrar_productos(dict)
+    actualizar=int(input("Seleccionar un articulo: "))
+    while True:
+        print("""
+              1.-Nombre
+              2.-Precio
+              3.-Codigo
+              4.-Salir
+              """)
+        dato=int(input("Que dato va actualizar: "))
+        match dato:
+            case 1:
+                n=input("Ingrese nuevo nombre: ")
+                dict[actualizar]["nombre"]=n
+            case 2:
+                n=input("Ingrese nuevo precio: ")
+                dict[actualizar]["precio"]=n
+            case 3:
+                n=input("Ingrese nuevo codigo: (debe tener minimo 1 mayuscula, 1 minuscula y 1 numero y el largo debe ser 6 caracteres)")
+                if validar_code(n):
+                    dict[actualizar]["codigo"]=n
+                else:
+                    print("El parametro del codigo no es correcto")
+            case 4:
+                print("Saliendo...")
+                break
+            case _:
+                print("Opcion invalida")
+
+def borrar_articulos(dict):
+    mostrar_productos(dict)
+    borrar=int(input("Seleccionar el articulo a borrar: "))
+    del dict[borrar]
 
 while True:
     try:
         print("""
-                1.- Registrar una persona
-                2.- Mostrar personas
-                3.- Actualizar personas
-                4.- Borrar personas
-                5.- Salir
+              ---Menu de compras---
+              1.-Ingresar un articulo
+              2.-Muestra articulos 
+              3.-Actualiza productos
+              4.-Borrar productos
+              5.-Salir.
               """)
-        opcion = int(input("Seleciona una opcion: "))
+        opcion = int(input("Ingresa una opcion: "))
         match opcion:
             case 1:
-                ingresar_persona(personas)
+                ingresar_articulo(articulos)
             case 2:
-                mostrar_personas(personas)
+                mostrar_productos(articulos)
             case 3:
-                actualizar_persona(personas)
+                actualizar_producto(articulos)
             case 4:
-                borrar_persona(personas)
+                borrar_articulos(articulos)
             case 5:
                 print("Saliendo...")
                 break
             case _:
-                print("Error, seleciona una opcion valida.")
+                print("Error ingresa una opcion valida")
     except Exception as e:
         print("Error")
-                
+
