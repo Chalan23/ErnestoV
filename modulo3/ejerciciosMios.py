@@ -373,121 +373,169 @@
 
 # -------------------------------------------------------------------------------------------
 
-# # carrito de compras (Bueno)
-# # registrar un articulo 
-# # muestra articulos
-# # actualizar producto 
-# # borrar producto
-# # salir
+# carrito de compras (Bueno)
+# registrar un articulo 
+# muestra articulos
+# actualizar producto 
+# borrar producto
+# salir
 
-# articulos = {
-#     1:{"nombre":"leche",
-#        "precio": 1000,
-#        "codigo":"LLee10"},
-#     2:{"nombre":"cereal",
-#        "precio": 1500,
-#        "codigo":"CCee15"},
-#     3:{"nombre":"jugo",
-#        "precio": 1200,
-#        "codigo":"JJuu12"}
-# }
+articulos = {
+    1:{"nombre":"leche",
+       "precio": 1000,
+       "codigo":"LLee10"},
+    2:{"nombre":"cereal",
+       "precio": 1500,
+       "codigo":"CCee15"},
+    3:{"nombre":"jugo",
+       "precio": 1200,
+       "codigo":"JJuu12"}
+}
 
-# def mostrar_productos(dict):
-#     for key, articulos  in dict.items():
-#         print(key, articulos)
+def mostrar_productos(dicc):
+    for key, articulos  in dicc.items():
+        print(key, articulos)
         
-# def validar_code(codigo):
-#     mayuscula=False
-#     minuscula=False
-#     numero=False
-#     for palabra in codigo:
-#         if palabra.isupper():
-#             mayuscula=True
-#         if palabra.islower():
-#             minuscula=True
-#         if palabra.isdigit():
-#             numero=True
-#     if mayuscula and minuscula and numero and len(codigo)==6:
-#         print("El codigo esta bien ingresado")
-#         return True
-#     else:
-#         print("El codigo esta mal escrito, debe tener al menos una mayuscula, minuscula y numero")
-#         return False
+def validar_code(codigo):
+    mayuscula=False
+    minuscula=False
+    numero=False
+    for palabra in codigo:
+        if palabra.isupper():
+            mayuscula=True
+        if palabra.islower():
+            minuscula=True
+        if palabra.isdigit():
+            numero=True
+    if mayuscula and minuscula and numero and len(codigo)==6:
+        print("El codigo esta bien ingresado")
+        return True
+    else:
+        print("El codigo esta mal escrito, debe tener al menos una mayuscula, minuscula y numero")
+        return False
     
-# def ingresar_articulo(dict):
-#     nombre=input("Ingrese el nombre: ")
-#     precio=input("Ingrese el precio: ")
-#     codigo=input("Ingrese el codigo: ")
-#     if validar_code(codigo):
-#         largo=list(dict.keys())[-1]
-#         dict[largo+1]={"nombre":nombre,
-#                        "precio":precio,
-#                        "codigo":codigo}
-#     else:
-#         print("El parametro del codigo no es correcto")
-    
-# def actualizar_producto(dict):
-#     mostrar_productos(dict)
-#     actualizar=int(input("Seleccionar un articulo: "))
-#     while True:
-#         print("""
-#               1.-Nombre
-#               2.-Precio
-#               3.-Codigo
-#               4.-Salir
-#               """)
-#         dato=int(input("Que dato va actualizar: "))
-#         match dato:
-#             case 1:
-#                 n=input("Ingrese nuevo nombre: ")
-#                 dict[actualizar]["nombre"]=n
-#             case 2:
-#                 n=input("Ingrese nuevo precio: ")
-#                 dict[actualizar]["precio"]=n
-#             case 3:
-#                 n=input("Ingrese nuevo codigo: (debe tener minimo 1 mayuscula, 1 minuscula y 1 numero y el largo debe ser 6 caracteres)")
-#                 if validar_code(n):
-#                     dict[actualizar]["codigo"]=n
-#                 else:
-#                     print("El parametro del codigo no es correcto")
-#             case 4:
-#                 print("Saliendo...")
-#                 break
-#             case _:
-#                 print("Opcion invalida")
+def ingresar_articulo(dicc):
+    nombre=input("Ingrese el nombre: ")
+    precio=input("Ingrese el precio: ")
+    codigo=input("Ingrese el codigo: ")
+    if validar_code(codigo):
+        largo=list(dicc.keys())[-1]
+        dicc[largo+1]={"nombre":nombre,
+                       "precio":precio,
+                       "codigo":codigo}
+    else:
+        print("El parametro del codigo no es correcto")
 
-# def borrar_articulos(dict):
-#     mostrar_productos(dict)
-#     borrar=int(input("Seleccionar el articulo a borrar: "))
-#     del dict[borrar]
 
-# while True:
-#     try:
-#         print("""
-#               ---Menu de compras---
-#               1.-Ingresar un articulo
-#               2.-Muestra articulos 
-#               3.-Actualiza productos
-#               4.-Borrar productos
-#               5.-Salir.
-#               """)
-#         opcion = int(input("Ingresa una opcion: "))
-#         match opcion:
-#             case 1:
-#                 ingresar_articulo(articulos)
-#             case 2:
-#                 mostrar_productos(articulos)
-#             case 3:
-#                 actualizar_producto(articulos)
-#             case 4:
-#                 borrar_articulos(articulos)
-#             case 5:
-#                 print("Saliendo...")
-#                 break
-#             case _:
-#                 print("Error ingresa una opcion valida")
-#     except Exception as e:
-#         print("Error")
+
+
+
+
+
+
+
+
+
+
+def actualizar_producto(dicc):
+    mostrar_productos(dicc)
+    actualizar=int(input("Seleccionar un articulo: "))
+    while True:
+        print("""
+              1.-Nombre
+              2.-Precio
+              3.-Codigo
+              4.-Salir
+              """)
+        dato=int(input("Que dato va actualizar: "))
+        match dato:
+            case 1:
+                n=input("Ingrese nuevo nombre: ")
+                dicc[actualizar]["nombre"]=n
+            case 2:
+                n=input("Ingrese nuevo precio: ")
+                dicc[actualizar]["precio"]=n
+            case 3:
+                n=input("Ingrese nuevo codigo: )")
+                if validar_code(n):
+                    dicc[actualizar]["codigo"]=n
+                else:
+                    print("El parametro del codigo no es correcto")
+            case 4:
+                print("Saliendo...")
+                break
+            case _:
+                print("Opcion invalida")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def borrar_articulos(dicc):
+    mostrar_productos(dicc)
+    borrar=int(input("Seleccionar el articulo a borrar: "))
+    del dicc[borrar]
+
+while True:
+    try:
+        print("""
+              ---Menu de compras---
+              1.-Ingresar un articulo
+              2.-Muestra articulos 
+              3.-Actualiza productos
+              4.-Borrar productos
+              5.-Salir.
+              """)
+        opcion = int(input("Ingresa una opcion: "))
+        match opcion:
+            case 1:
+                ingresar_articulo(articulos)
+            case 2:
+                mostrar_productos(articulos)
+            case 3:
+                actualizar_producto(articulos)
+            case 4:
+                borrar_articulos(articulos)
+            case 5:
+                print("Saliendo...")
+                break
+            case _:
+                print("Error ingresa una opcion valida")
+    except Exception as e:
+        print("Error")
 
 
 
@@ -508,14 +556,14 @@
 #         "codigo": "SSAA80"}
 # }
 
-# def mostrar_articulos(dict):
-#     for key, articulos in dict.items():
+# def mostrar_articulos(dicc):
+#     for key, articulos in dicc.items():
 #         print(key, articulos)
 
-# def borrar_articulos(dict):
-#     mostrar_articulos(dict)
+# def borrar_articulos(dicc):
+#     mostrar_articulos(dicc)
 #     borrar = int(input("Que ID quieres borrar"))
-#     del dict[borrar]
+#     del dicc[borrar]
 
 # def validar_code(codigo):
 #     mayuscula = False
@@ -540,15 +588,15 @@
 #     precio=input("Ingresar precio: ")
 #     codigo=input("Ingresar codigo: ")
 #     if validar_code(codigo):
-#         largo=list(dict.keys())[-1]
-#         dict[largo+1]={"nombre":nombre,
+#         largo=list(dicc.keys())[-1]
+#         dicc[largo+1]={"nombre":nombre,
 #                        "precio":precio,
 #                        "codigo":codigo}
 #     else:
 #         print("El parametro no es correcto")
 
-# def actualizar_articulo(dict):
-#     mostrar_articulos(dict)
+# def actualizar_articulo(dicc):
+#     mostrar_articulos(dicc)
 #     act = int(input("Que actualizara: "))
 #     while True:
 #         print("""
@@ -561,14 +609,14 @@
 #         match dato:
 #             case 1:
 #                 n=input("Nuevo nombre: ")
-#                 dict[act]["nombre"]=n
+#                 dicc[act]["nombre"]=n
 #             case 2:
 #                 n=input("Nuevo precio: ")
-#                 dict[act]["precio"]=n
+#                 dicc[act]["precio"]=n
 #             case 3:
 #                 n=input("Nuevo codigo: ")
 #                 if validar_code(n):
-#                     dict[act]["precio"]=n
+#                     dicc[act]["precio"]=n
                 
 #                 else:
 #                     print("Codigo no correcto")
@@ -604,113 +652,137 @@
 
 # ----------------------------------------------------------------------------------------
 
-# carrito de compras 
-# registrar un articulo 
-# muestra articulos
-# actualizar producto 
-# borrar producto
-# salir
+# # carrito de compras 
+# # registrar un articulo 
+# # muestra articulos
+# # actualizar producto 
+# # borrar producto
+# # salir
 
-productos = {
-            1:{"Nombre":"Helado",
-             "Precio":1000,
-             "codigo":"HHee10"},
-            2:{"Nombre":"Chocolate",
-             "Precio":1200,
-             "codigo":"CChh12"}
-            }
+# productos = {
+#     1: {"nombre": "Helado", "precio": 1000, "codigo": "HHee10"},
+#     2: {"nombre": "Chocolate", "precio": 1200, "codigo": "CChh12"}
+# }
 
-def mostrar_productos(dict):
-    for key, productos in dict.items():
-        print(key, productos)
+# def mostrar_productos(dic):
+#     for key, producto in dic.items():
+#         print(key, producto)
 
-def borrar_productos(dict):
-    mostrar_productos
-    borrar = input("Que producto deseas borrar: ")
-    del dict[borrar]
+# def borrar_productos(dic):
+#     mostrar_productos(dic)
+#     try:
+#         borrar = int(input("Que producto deseas borrar (ID): "))
+#         if borrar in dic:
+#             del dic[borrar]
+#             print("Producto borrado.")
+#         else:
+#             print("ID no encontrado.")
+#     except Exception:
+#         print("Error al borrar producto.")
 
-def validar_code(codigo):
-    mayuscula = False
-    minuscula = False
-    numeros = False
-    for palabra in codigo:
-        if palabra.isuper():
-            mayuscula = True
-        if palabra.islower():
-            minuscula = True 
-        if palabra.isdigit():
-            if mayuscula and minuscula and numeros and len(codigo)==6:
-                print("Los parametros estan bien")
-                True
-            else:
-                print("No cumple los parametros")
-                False
+# def validar_code(codigo):
+#     mayuscula = False
+#     minuscula = False
+#     numeros = False
+#     for c in codigo:
+#         if c.isupper():
+#             mayuscula = True
+#         if c.islower():
+#             minuscula = True 
+#         if c.isdigit():
+#             numeros = True
+#     if mayuscula and minuscula and numeros and len(codigo) == 6:
+#         print("Los parametros estan bien")
+#         return True
+#     else:
+#         print("No cumple los parametros")
+#         return False
 
-def actualizar_producto(dict):
-    mostrar_productos
-    actualizar = int(input("Que producto desea actualizar: "))
-    while True:
-        print("""
-              1.-Nombre 
-              2.-Precio
-              3.-Codigo
-              4.-Salir
-              """)
-        dato = int(input("Que dato deseas actualizar: "))
-        match dato:
-            case 1:
-                n = input("Ingrese el nuevo nombre: ")
-                dict[actualizar]["nombre"]=n
-            case 2:
-                n = input("Ingrese el nuevo precio: ")
-                dict[actualizar]["precio"]=n
-            case 3:
-                if validar_code:
-                    n = input("Ingrese el nuevo precio: ")
-                    dict[actualizar]["precio"]=n
-                else:
-                    print("El codigo no es correcto")
-            case 4:
-                print("Saliendo...")
-            case _:
-                print("Error, ingresa una opcion valida")
+# def actualizar_producto(dic):
+#     mostrar_productos(dic)
+#     try:
+#         actualizar = int(input("Que producto desea actualizar (ID): "))
+#         if actualizar not in dic:
+#             print("ID no encontrado.")
+#             return
+#         while True:
+#             print("""
+#               1.-Nombre 
+#               2.-Precio
+#               3.-Codigo
+#               4.-Salir
+#               """)
+#             dato = int(input("Que dato deseas actualizar: "))
+#             match dato:
+#                 case 1:
+#                     n = input("Ingrese el nuevo nombre: ")
+#                     dic[actualizar]["nombre"] = n
+#                 case 2:
+#                     try:
+#                         n = int(input("Ingrese el nuevo precio: "))
+#                         dic[actualizar]["precio"] = n
+#                     except Exception:
+#                         print("Precio invalido.")
+#                 case 3:
+#                     n = input("Ingrese el nuevo codigo: ")
+#                     if validar_code(n):
+#                         dic[actualizar]["codigo"] = n
+#                     else:
+#                         print("El codigo no es correcto")
+#                 case 4:
+#                     print("Saliendo...")
+#                     break
+#                 case _:
+#                     print("Error, ingresa una opcion valida")
+#     except Exception:
+#         print("Error al actualizar producto.")
 
-def ingresa_articulo(dict):
-    nombre = input("Ingrese El nombre: ")
-    precio = int(input("Ingrese el precio: "))
-    codigo = input("Ingrese el codigo: ")
-    if validar_code(codigo):
-        largo = list(dict.keys())[-1]
-        dict[largo+1]={"nombre",nombre,
-                       "precio",precio,
-                       "codigo",codigo}
-    else:
-        print("El parametro no es correcto")
+# def ingresa_articulo(dic):
+#     nombre = input("Ingrese el nombre: ")
+#     try:
+#         precio = int(input("Ingrese el precio: "))
+#     except Exception:
+#         print("Precio invalido.")
+#         return
+#     codigo = input("Ingrese el codigo: ")
+#     if validar_code(codigo):
+#         if dic:
+#             nuevo_id = max(dic.keys()) + 1
+#         else:
+#             nuevo_id = 1
+#         dic[nuevo_id] = {
+#             "nombre": nombre,
+#             "precio": precio,
+#             "codigo": codigo
+#         }
+#         print("Articulo agregado.")
+#     else:
+#         print("El parametro no es correcto")
 
-while True:
-    try:
-        print("""
-              °°°Menu Opciones°°°
-                1.-Registrar un articulo 
-                2.-Muestra articulos
-                3.-Actualizar producto  
-                4.-Borrar producto
-                5.-Salir
-              """)
-        opciones = int(input("Elige una opcion: "))
-        match opciones:
-            case 1:
-                ingresa_articulo(productos)
-            case 2:
-                mostrar_productos(productos)
-            case 3:
-                actualizar_producto(productos)
-            case 4:
-                borrar_productos(productos)
-            case 5:
-                print("Saliendo...")
-                break
-            case _:
-                print("Error, ingrersa una iopcion valida")
-    except Exception:
-        print("Error.")
+# while True:
+#     try:
+#         print("""
+#               °°°Menu Opciones°°°
+#                 1.-Registrar un articulo 
+#                 2.-Muestra articulos
+#                 3.-Actualizar producto  
+#                 4.-Borrar producto
+#                 5.-Salir
+#               """)
+#         opciones = int(input("Elige una opcion: "))
+#         match opciones:
+#             case 1:
+#                 ingresa_articulo(productos)
+#             case 2:
+#                 mostrar_productos(productos)
+#             case 3:
+#                 actualizar_producto(productos)
+#             case 4:
+#                 borrar_productos(productos)
+#             case 5:
+#                 print("Saliendo...")
+#                 break
+#             case _:
+#                 print("Error, ingresa una opcion valida")
+#     except Exception:
+#         print("Error.")
