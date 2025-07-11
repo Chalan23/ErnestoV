@@ -289,7 +289,7 @@ def comprarPro(dicc):
     mostrarPro(dicc)
     idPro = int(input("Selecciona el numero del producto que deseas comprar: "))
     if idPro in dicc:
-        print(f"Has comprado '{dicc[idPro]['producto']}' por ${dicc[idPro]['precio']}.")
+        print("Compra exitosa")
     else:
         print("Producto no encontrado.")
 
@@ -363,7 +363,15 @@ while True:
                 print("Error, seleciona una opcion valida")
     except Exception as e:
         print("Error.", e)
-        
 
 
 
+
+
+def compararPro(dicc):
+    mostrarPro(dicc)
+    idPro=int(input("Ingresa el numero del producto a comprar: "))
+    if idPro in dicc:
+        print("Producto comprado")
+    else:
+        print("Producto no encontrado")
