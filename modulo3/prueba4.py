@@ -241,137 +241,487 @@
 
 # -------------------------------------------------------------------------------------------
 
-# carrito de compra 
-# con el siguiente menu
-# Validar codigo, mostrar producto, borrar producto, 
-# actualizar producto, precio mayor, comprar producto
+# # carrito de compra 
+# # con el siguiente menu
+# # Validar codigo, mostrar producto, borrar producto, 
+# # actualizar producto, precio mayor, comprar producto
 
-productos = {
-    1:{"producto":"leche",
-       "precio":1000,
-       "codigo":"LLee10"},
-    2:{"producto":"jugo",
-       "precio":1200,
-       "codigo":"JJuu12"},
-    3:{"producto":"cereal",
-       "precio":1500,
-       "codigo":"CCee15"}
-}
+# productos = {
+#     1:{"producto":"leche",
+#        "precio":1000,
+#        "codigo":"LLee10"},
+#     2:{"producto":"jugo",
+#        "precio":1200,
+#        "codigo":"JJuu12"},
+#     3:{"producto":"cereal",
+#        "precio":1500,
+#        "codigo":"CCee15"}
+# }
 
-def valiCode(codigo):
-    mayus = False
-    minus = False
-    num = False
-    for palabra in codigo:
-        if palabra.isupper():
-            mayus = True
-        if palabra.islower():
-            minus = True
-        if palabra.isdigit():
-            num = True 
-    if mayus and minus and num and len(codigo)==6:
-        print("Codigo correcto")
-        return True
-    else:
-        print("Codigo incorrecto")
-        return False
+# def valiCode(codigo):
+#     mayus = False
+#     minus = False
+#     num = False
+#     for palabra in codigo:
+#         if palabra.isupper():
+#             mayus = True
+#         if palabra.islower():
+#             minus = True
+#         if palabra.isdigit():
+#             num = True 
+#     if mayus and minus and num and len(codigo)==6:
+#         print("Codigo correcto")
+#         return True
+#     else:
+#         print("Codigo incorrecto")
+#         return False
 
-def mostrarPro(dicc):
-    for key, productos in dicc.items():
-        print(key, productos)
+# def mostrarPro(dicc):
+#     for key, productos in dicc.items():
+#         print(key, productos)
 
-def eliminarPro(dicc):
-    mostrarPro(dicc)
-    eliminar = int(input("Que producto deseas borrar: "))
-    del dicc[eliminar]
+# def eliminarPro(dicc):
+#     mostrarPro(dicc)
+#     eliminar = int(input("Que producto deseas borrar: "))
+#     del dicc[eliminar]
 
-def comprarPro(dicc):
-    mostrarPro(dicc)
-    idPro = int(input("Selecciona el numero del producto que deseas comprar: "))
-    if idPro in dicc:
-        print("Compra exitosa")
-    else:
-        print("Producto no encontrado.")
+# def comprarPro(dicc):
+#     mostrarPro(dicc)
+#     idPro = int(input("Selecciona el numero del producto que deseas comprar: "))
+#     if idPro in dicc:
+#         print("Compra exitosa")
+#     else:
+#         print("Producto no encontrado.")
 
-def precioMayor(dicc):
-    if dicc:
-        mayor = 0
-        nombre = ""
-        for key in dicc:
-            if dicc[key]["precio"] > mayor:
-                mayor = dicc[key]["precio"]
-                nombre = dicc[key]["producto"]
-        print(f"Producto mas caro: '{nombre}' - ${mayor}")
-    else:
-        print("No hay productos.")
+# def precioMayor(dicc):
+#     if dicc:
+#         mayor = 0
+#         nombre = ""
+#         for key in dicc:
+#             if dicc[key]["precio"] > mayor:
+#                 mayor = dicc[key]["precio"]
+#                 nombre = dicc[key]["producto"]
+#         print(f"Producto mas caro: '{nombre}' - ${mayor}")
+#     else:
+#         print("No hay productos.")
 
-def actualizarPRo(dicc):
-    mostrarPro(dicc)
-    act = int(input("Seleciona un articulo: "))
-    while True:
-        print("""
-              1.-producto
-              2.-precio
-              3.-codigo
-              4.-salir
-              """)
-        dato=int(input("Que dato vas actualizar: "))
-        match dato:
-            case 1:
-                nuevo=input("Ingresa el nuevo nombre: ")
-                dicc[act]["producto"]=nuevo
-            case 2:
-                nuevo=int(input("Ingresa el nuevo precio: "))
-                dicc[act]["precio"]=nuevo
-            case 3:
-                nuevo=input("Ingresa el nuevo codigo: ")
-                if valiCode(nuevo):
-                    dicc[act]["codigo"]=nuevo
-            case 4:
-                print("Saliendo...")
-                break
-            case _:
-                print("Error, elige una opcion valida")
+# def actualizarPRo(dicc):
+#     mostrarPro(dicc)
+#     act = int(input("Seleciona un articulo: "))
+#     while True:
+#         print("""
+#               1.-producto
+#               2.-precio
+#               3.-codigo
+#               4.-salir
+#               """)
+#         dato=int(input("Que dato vas actualizar: "))
+#         match dato:
+#             case 1:
+#                 nuevo=input("Ingresa el nuevo nombre: ")
+#                 dicc[act]["producto"]=nuevo
+#             case 2:
+#                 nuevo=int(input("Ingresa el nuevo precio: "))
+#                 dicc[act]["precio"]=nuevo
+#             case 3:
+#                 nuevo=input("Ingresa el nuevo codigo: ")
+#                 if valiCode(nuevo):
+#                     dicc[act]["codigo"]=nuevo
+#             case 4:
+#                 print("Saliendo...")
+#                 break
+#             case _:
+#                 print("Error, elige una opcion valida")
 
-while True:
-    try:
-        print("""
-              °°°menu°°°
-              1.-Comprar producto 
-              2.-mostrar producto
-              3.-eliminar producto 
-              4.-precio mayor 
-              5.-actualizar producto
-              6.-salir
-              """)
-        opc = int(input("Seleciona una opcion: "))
-        match opc:
-            case 1:
-                comprarPro(productos)
-            case 2:
-                mostrarPro(productos)
-            case 3:
-                eliminarPro(productos)
-            case 4:
-                precioMayor(productos)
-            case 5:
-                actualizarPRo(productos)
-            case 6:
-                print("Saliendo...")
-                break
-            case _:
-                print("Error, seleciona una opcion valida")
-    except Exception as e:
-        print("Error.", e)
+# while True:
+#     try:
+#         print("""
+#               °°°menu°°°
+#               1.-Comprar producto 
+#               2.-mostrar producto
+#               3.-eliminar producto 
+#               4.-precio mayor 
+#               5.-actualizar producto
+#               6.-salir
+#               """)
+#         opc = int(input("Seleciona una opcion: "))
+#         match opc:
+#             case 1:
+#                 comprarPro(productos)
+#             case 2:
+#                 mostrarPro(productos)
+#             case 3:
+#                 eliminarPro(productos)
+#             case 4:
+#                 precioMayor(productos)
+#             case 5:
+#                 actualizarPRo(productos)
+#             case 6:
+#                 print("Saliendo...")
+#                 break
+#             case _:
+#                 print("Error, seleciona una opcion valida")
+#     except Exception as e:
+#         print("Error.", e)
+
+# -------------------------------------------------------------------------------
+
+# productos = {
+#     1:{"producto":"leche",
+#        "precio": 1000},
+#     2:{"producto":"jugo",
+#        "precio": 1200},
+#     3:{"producto":"cereal",
+#        "precio": 1500}
+# }
+
+# def mostrarProd(dicc):
+#     for key, productos in dicc.items():
+#         print(key,productos)
+
+# def mostPorNombre(dicc):
+#     mostrarProd(dicc)
+#     nomProd = input("Que producto quieres buscar: ")
+#     for key, prod in dicc.items():
+#         if prod["producto"] == nomProd:
+#             print(f"Producto {key} - {prod}")
+#             break
+#     else:
+#         print("Producto no encontrado.")
+
+# def agregarProd(dicc):
+#     nombre = input("Ingresa el nombre del nuevo producto: ")
+#     precio = int(input("Ingresa el nuevo precio: "))
+#     nuevoId = max(dicc.keys())+1
+#     dicc[nuevoId] = {"producto": nombre, "precio": precio}
+#     print("Producto agregado exitosamente.")
+
+
+# while True:
+#     try:
+#         print("""
+#               °°°Menu°°°
+#               1.-Agregar productos
+#               2.-Buscar producto por nombre
+#               3.-Mostrar todos los productos
+#               4.-Salir""")
+#         opc = int(input("Seleciona una opcion: "))
+#         match opc:
+#             case 1:
+#                 agregarProd(productos)
+#             case 2:
+#                 mostPorNombre(productos)
+#             case 3:
+#                 mostrarProd(productos)
+#             case 4:
+#                 print("Saliendo...")
+#                 break
+#             case _:
+#                 print("Error, opcion invalida.")
+#     except Exception as e: 
+#         print("Error,", e)
+
+# ------------------------------------------------------------------------------------
+
+# # Estructura inicial:
+# # La lista se llama alumnos, y cada alumno es un diccionario así:
+# # {"nombre": "Juan", "notas": {"mate": 5.0, "historia": 6.0}}
+# # Menú principal (usa match):
+# # Agregar alumno
+# # Agregar nota a alumno existente
+# # Mostrar promedio de un alumno
+# # Mostrar todos los alumnos
+# # Salir
+# # Detalles importantes:
+# # Cada alumno puede tener varias asignaturas.
+# # El promedio se calcula sobre todas sus notas.
+# # Si el alumno no existe, debe mostrar un mensaje de error.
+
+# alumnos = {
+#     1:{"nombre":"ernesto"},
+#     2:{"nombre":"Juan"}
+# }
+
+# notas = {
+#     1:{"matematicas":6.7,
+#        "historia":5.5},
+#     2:{"matematicas":5.0,
+#        "historia":6.5}
+# }
+
+# def mostrarAlum(dicc):
+#     for key, alumnos in dicc.items():
+#         print(key, alumnos)
+
+# def mostrarPromed(dicc):
+#     for key, notas in dicc.items():
+#         if notas:
+#             NotasTotal = 0
+#             NotasCanti = 0
+#             for nota in notas:
+#                 NotasTotal += notas[nota]
+#                 NotasCanti += 1
+#             if NotasCanti > 0:
+#                 promedio = NotasTotal / NotasCanti
+#                 print(f"Alumno {key}: Promedio = {promedio}")
+
+# def agregarAlumYNota(dicc):
+#     nombre = input("Ingresa el nombre: ")
+#     notaMate = float(input("Ingresa la nota de matematica: "))
+#     notaHisto = float(input("Ingresa la nota de historia: "))
+#     alumNuevo = max(dicc.keys())+1
+#     dicc[alumNuevo] = {"nombre": nombre}
+#     notas[alumNuevo] = {"matematicas": notaMate, "historia": notaHisto}
+#     print("Alumno y notas agregado exitosamente")
+
+
+# while True:
+#     try:
+#         print("""
+#                 °°°Menu°°°
+#               1.-Agregar alumno
+#               2.-Agregar nota
+#               3.-Mostrar promedio
+#               4.-Mostrar todos los alumnos
+#               5.-Salir
+#               """)
+#         opc=int(input("Selecciona una opcion: "))
+#         match opc:
+#             case 1:
+#                 agregarAlumYNota(alumnos)
+#             case 2:
+#                 agregarAlumYNota(notas)
+#             case 3:
+#                 mostrarPromed(notas)
+#             case 4:
+#                 mostrarAlum(alumnos)
+#             case 5:
+#                 print("Saliendo...")
+#                 break
+#             case _:
+#                 print("Error, elige una opcion valida")
+#     except Exception as e:
+#         print("Error.",e)
+
+# ----------------------------------------------------------------------------------
+
+
+# # catalogo: diccionario con ID, nombre y precio de productos.
+# # ventas: lista donde cada elemento es un diccionario con:
+# # cliente: nombre del cliente
+# # producto: nombre del producto vendido
+# # cantidad: unidades vendidas
+# # total: precio final
+# # Agregar producto al catálogo
+# # Registrar una venta
+# # Mostrar ventas realizadas
+# # Mostrar total recaudado
+# # Salir
+
+# catalogo = {
+#     1:{"producto":"leche",
+#        "total":1200},
+#     2:{"producto":"jugo",
+#        "total":1000},
+#     3:{"producto":"cereal",
+#        "total":2000}
+# }
+
+# ventas = {
+#     1:{"cliente":"ernesto",
+#        "producto":"leche",
+#        "cantidad": 2,
+#        "total":2400},
+#     2:{"cliente":"camila",
+#        "producto":"jugo",
+#        "cantidad": 3,
+#        "total":3000},
+#     3:{"cliente":"diego",
+#        "producto":"cereal",
+#        "cantidad": 1,
+#        "total":2000}
+# }
+
+# def mostrarTotal(dicc):
+#     total = 0
+#     for venta in dicc.items():
+#         total += venta[1]["total"]
+#     print("Total", total)
+
+# def mostrarProd(dicc):
+#     for key, catalogo in dicc.items():
+#         print(key, catalogo)
+
+# def mostrarVentas(dicc):
+#     for key, ventas in dicc.items():
+#         print(key, ventas)
+
+# def agregarProd(dicc):
+#     producto = input("Que producto vas agregar: ")
+#     total = int(input("Ingresa el valor del producto: "))
+#     prodNuevo = max(dicc.keys()) + 1
+#     dicc[prodNuevo] = {"producto": producto, "total": total}
+
+# def resgVentas(catalogo, ventas):
+#     mostrarProd(catalogo)
+#     cliente = input("Ingresa tu nombre: ")
+#     prod = int(input("Elige el numero del producto: "))
+#     cantidad = int(input("Ingresa la cantidad que llevaras: "))
+#     if prod in catalogo:
+#         nombreProd = catalogo[prod]["producto"]
+#         precio = catalogo[prod]["total"]
+#         total = precio * cantidad
+#         venta = max(ventas.keys(), default=0) + 1
+#         ventas[venta] = {
+#             "cliente": cliente,
+#             "producto": nombreProd,
+#             "cantidad": cantidad,
+#             "total": total}
+
+# while True:
+#     try:
+#         print("""
+#                 °°°Menu°°°
+#               1.-Agrega productos
+#               2.-Registrar venta
+#               3.-Mostrar ventas
+#               4.-Mostrar total
+#               5.-Salir""")
+#         opc= int(input("Seleciona una opcion: "))
+#         match opc:
+#             case 1:
+#                 agregarProd(catalogo)
+#             case 2:
+#                 resgVentas(catalogo, ventas)
+#             case 3:
+#                 mostrarVentas(ventas)
+#             case 4:
+#                 mostrarTotal(ventas)
+#             case 5:
+#                 print("Saliendo...")
+#                 break
+#             case _:
+#                 print("Error, elige una opcion valida")
+#     except Exception as e:
+#         print("Error.", e)
+
+# ---------------------------------------------------------------------------
+
+# prod = {
+#     1:{"nombre":"papas",
+#        "precio":1000,
+#        "codigo":"PPaa10"},
+#     2:{"nombre":"naranja",
+#        "precio":1200,
+#        "codigo":"NNaa12"},
+# }
+
+# def ValiCode(codigo):
+#     mayus = False
+#     minus = False
+#     num = False
+#     for palabra in codigo:
+#         if palabra.isupper():
+#             mayus = True
+#         if palabra.islower():
+#             minus = True 
+#         if palabra.isdigit():
+#             num = True
+#     if mayus and minus and num and len(codigo)==6:
+#         print("Codigo valido")
+#         return True
+#     else:
+#         print("Codigo invalido")
+
+# def mostProd(dicc):
+#     for key, prod in dicc.items():
+#         print(key, prod)
+
+# def borrProd(dicc):
+#     mostProd(dicc)
+#     borrar = int(input("Elige el numero del producto que quieres borrar: "))
+#     del dicc[borrar]
+
+# def compraProd(dicc):
+#     mostProd(dicc)
+#     eligProd = int(input("Elige el producto que quieres comprar: "))
+#     if eligProd in dicc:
+#         print("Compra exitosa")
+
+# def actProd(dicc):
+#     mostProd(dicc)
+#     act = int(input("Elige el producto a actualizar: "))
+#     while True:
+#         print("""
+#               1.-Nombre
+#               2.-Precio
+#               3.-Codigo
+#               4.-Salir
+#               """)
+#         actDato = int(input("Selecciona que dato actualizar: "))
+#         match actDato:
+#             case 1:
+#                 nuevo = input("Actualiza el nombre: ")
+#                 dicc[act]["nombre"] = nuevo
+#             case 2:
+#                 nuevo = int(input("Actualiza el precio: "))
+#                 dicc[act]["precio"] = nuevo
+#             case 3:
+#                 nuevo = input("Actualiza el código: ")
+#                 if ValiCode(nuevo):
+#                     dicc[act]["codigo"] = nuevo
+#             case 4:
+#                 print("Saliendo...")
+#                 break
+#             case _:
+#                 print("Error, selecciona una opción valida.")
+
+# def AgreProd(dicc):
+#     nombre = input("Nombre del nuevo producto: ")
+#     precio = int(input("Ingresa el precio: "))
+#     print("""Recuerda el codigo minimo debe tener: 
+#             Una mayuscula, una minuscula, un numero
+#             y ademas debe tener un largo de 6 digitos""")
+#     codigo = input("Ingresa el codigo: ")
+#     ValiCode(codigo)
+#     nuevoProd = max(dicc.keys())+1
+#     dicc[nuevoProd] = {"nombre": nombre, 
+#                        "precio": precio, 
+#                        "codigo": codigo}
+
+# while True:
+#     try:
+#         print("""
+#                 °°°Menu°°°
+#               1.-Mostrar productos
+#               2.-Agregar productos
+#               3.-Borrar productos
+#               4.-Comprar productos
+#               5.-Actualizar producto
+#               6.-Salir...
+#               """)
+#         opc=int(input("Seleciona una opcion: "))
+#         match opc:
+#             case 1:
+#                 mostProd(prod)
+#             case 2:
+#                 AgreProd(prod)
+#             case 3:
+#                 borrProd(prod)
+#             case 4:
+#                 compraProd(prod)
+#             case 5:
+#                 actProd(prod)
+#             case 6:
+#                 print("Saliendo...")
+#                 break
+#             case _:
+#                 print("Error, elige una opcion valida.")
+#     except Exception as e:
+#         print("Error.", e)
 
 
 
 
 
-def compararPro(dicc):
-    mostrarPro(dicc)
-    idPro=int(input("Ingresa el numero del producto a comprar: "))
-    if idPro in dicc:
-        print("Producto comprado")
-    else:
-        print("Producto no encontrado")
+
